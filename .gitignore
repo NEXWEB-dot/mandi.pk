@@ -1,0 +1,7 @@
+# local preview artifacts
+.shots/
+node_modules/
+
+# os junk
+.DS_Store
+Thumbs.db
