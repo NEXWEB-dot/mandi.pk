@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seller Catalogue — mandi.pk</title>
+<meta name="description" content="View verified livestock stock, agreed prices, and book 30-minute viewing slots for animals listed by verified Karachi mandi beparis.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --bg-white: #ffffff;
+  --bg-cream: #faf7f2;
+  --bg-sand: #f5eee4;
+  --bg-sand-light: #fbf9f5;
+  --border-light: #e6dac6;
+  --border-subtle: #efe8dc;
+
+  --ink-primary: #1b120c;
+  --ink-secondary: #4a3628;
+  --ink-muted: #786555;
+  --ink-light: #a49385;
+
+  --brand-brown-dark: #32190b;
+  --brand-brown: #4e2b15;
+  --brand-brown-mid: #683c1e;
+  --brand-brown-light: #a37248;
+  --brand-tan: #d4b488;
+  --brand-tan-soft: #f4ece0;
+  --brand-tan-border: #e6dac6;
+
+  --accent-gold: #c09148;
+  --accent-blue-tick: #1d9bf0;
+  --accent-green: #1faa53;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --shadow-subtle: 0 4px 20px rgba(78,43,21,0.06);
+  --shadow-card: 0 8px 30px rgba(78,43,21,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg-cream);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Top Navbar ---------- */
+.site-nav {
+  background: var(--brand-brown-dark);
+  color: #fff;
+  border-bottom: 1px solid rgba(212,180,136,0.18);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-brand-logo {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav-brand-logo .tld {
+  color: var(--accent-gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color .2s;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-cta {
+  background: var(--accent-gold);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background .2s;
+}
+
+.nav-cta:hover {
+  background: #b0823b;
+}
+
+/* ---------- Breadcrumbs ---------- */
+.breadcrumb-bar {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 14px 0;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.breadcrumb-list a {
+  color: var(--ink-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb-list a:hover {
+  color: var(--brand-brown);
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  color: var(--ink-light);
+}
+
+.breadcrumb-current {
+  color: var(--brand-brown);
+  font-weight: 600;
+}
+
+/* ---------- Bepari Profile Hero Banner ---------- */
+.bepari-hero {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 40px 0;
+}
+
+.bepari-hero-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.bepari-hero-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.hero-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-md);
+  background: var(--brand-brown);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.hero-bepari-name {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.15;
+}
+
+.blue-tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  background: var(--accent-blue-tick);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.hero-bepari-meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 16px;
+}
+
+.hero-stats-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  background: var(--bg-cream);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-secondary);
+}
+
+.stat-pill b {
+  color: var(--brand-brown);
+  font-weight: 700;
+}
+
+.bepari-hero-actions {
+  display: flex;
+  gap: 12px;
+  align-self: center;
+}
+
+.btn-contact-wa {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #25d366;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .2s;
+}
+
+.btn-contact-wa:hover {
+  background: #1eb956;
+}
+
+.btn-call {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand-brown);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .2s;
+}
+
+.btn-call:hover {
+  background: var(--brand-brown-dark);
+}
+
+/* ---------- Catalog Section ---------- */
+.catalog-section {
+  padding: 44px 0 70px;
+}
+
+.catalog-header {
+  margin-bottom: 32px;
+}
+
+.catalog-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-brown);
+  background: var(--brand-tan-soft);
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+}
+
+.catalog-title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.015em;
+}
+
+.catalog-sub {
+  color: var(--ink-muted);
+  font-size: 14.5px;
+}
+
+/* ---------- Animal Dossier Cards Grid ---------- */
+.animal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .animal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .animal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.animal-dossier-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 14px rgba(78,43,21,0.07);
+  transition: transform .25s, box-shadow .25s;
+  cursor: pointer;
+}
+
+.animal-dossier-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(78,43,21,0.12);
+}
+
+/* Lot Strip */
+.dossier-lot-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px;
+  background: var(--bg-cream);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.dossier-lot-code {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+
+.dossier-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-green);
+}
+
+/* Photo Chamber */
+.dossier-photo-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: #ebdcc8;
+}
+
+.dossier-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.animal-dossier-card:hover .dossier-photo-wrap img {
+  transform: scale(1.04);
+}
+
+.dossier-ear-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(20, 10, 4, 0.88);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  backdrop-filter: blur(4px);
+}
+
+.gold-seal {
+  color: var(--accent-gold);
+  font-size: 9px;
+}
+
+.dossier-top-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  color: var(--brand-brown);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 3px;
+  border: 1px solid var(--border-light);
+}
+
+/* Content */
+.dossier-content {
+  padding: 14px 16px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dossier-headline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.dossier-breed-title {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  letter-spacing: -0.015em;
+}
+
+.dossier-gender-badge {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--bg-sand);
+  border: 1px solid var(--border-light);
+  color: var(--ink-secondary);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.dossier-origin-subtitle {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  color: var(--ink-muted);
+  margin-bottom: 12px;
+}
+
+/* Spec Matrix */
+.dossier-spec-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.dossier-spec-col {
+  background: var(--bg-cream);
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dossier-spec-k {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.dossier-spec-v {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand-brown);
+}
+
+/* Action Plate */
+.dossier-action-plate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0 14px;
+  gap: 10px;
+  margin-top: auto;
+  border-top: 1px solid var(--border-light);
+}
+
+.dossier-price-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.dossier-price-tag-sub {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.dossier-price-num {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+}
+
+.btn-dossier-book {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand-brown);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 9px 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .2s;
+  text-decoration: none;
+}
+
+.btn-dossier-book:hover {
+  background: var(--brand-brown-dark);
+}
+
+.book-arrow {
+  color: var(--brand-tan);
+  font-size: 13px;
+}
+
+.empty-catalog {
+  background: var(--bg-white);
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 48px;
+  text-align: center;
+  color: var(--ink-muted);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--brand-brown-dark);
+  color: rgba(255,255,255,0.7);
+  padding: 40px 0;
+  font-size: 13px;
+  border-top: 1px solid rgba(212,180,136,0.15);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+</style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-logo">mandi<span class="tld">.pk</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#animals" class="nav-link">Browse Animals</a>
+      <a href="beparis.html" class="nav-link">Verified Beparis</a>
+      <a href="index.html#how" class="nav-link">How It Works</a>
+      <a href="index.html#animals" class="nav-cta">Live Catalog &rarr;</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb-bar" aria-label="Breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-list">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <a href="beparis.html">Verified Beparis</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <span class="breadcrumb-current" id="crumb-bepari-name">Loading bepari...</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Bepari Profile Hero -->
+<section class="bepari-hero">
+  <div class="container">
+    <div class="bepari-hero-card">
+      <div class="bepari-hero-left">
+        <div class="hero-avatar" id="hero-avatar">HA</div>
+        <div>
+          <div class="hero-name-row">
+            <h1 class="hero-bepari-name" id="hero-bepari-name">Haji Abdul Razzaq</h1>
+            <span class="blue-tick" id="hero-bepari-tick" title="Verified Mandi Seller">&#10003;</span>
+          </div>
+          <div class="hero-bepari-meta" id="hero-bepari-meta">
+            Super Highway Mandi &bull; Stall #14 &bull; Selling since 1987
+          </div>
+          <div class="hero-stats-row">
+            <div class="stat-pill">Sold: <b id="stat-sold">142 Animals</b></div>
+            <div class="stat-pill">Current Stock: <b id="stat-stock">84 Listed</b></div>
+            <div class="stat-pill">Rating: <b id="stat-rating">4.9 &#9733;</b></div>
+            <div class="stat-pill">Shed Status: <b style="color:var(--accent-green);">&#10003; Inspected</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bepari-hero-actions">
+        <a href="#" id="hero-btn-wa" class="btn-contact-wa" target="_blank" rel="noopener">
+          <span>&#128172; WhatsApp Bepari</span>
+        </a>
+        <a href="#" id="hero-btn-call" class="btn-call">
+          <span>&#128222; Call Stall</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Animal Catalogue Grid -->
+<main class="catalog-section">
+  <div class="container">
+    <div class="catalog-header">
+      <div class="catalog-tag">&#9670; Seller Stock</div>
+      <h2 class="catalog-title" id="catalog-heading">Animals Listed by Haji Abdul Razzaq</h2>
+      <p class="catalog-sub">
+        Every animal listed below is physically housed at this seller's shed. Click any animal to inspect full specs and reserve an exclusive 30-minute viewing window.
+      </p>
+    </div>
+
+    <div class="animal-grid" id="seller-animals-grid">
+      <!-- Dynamic render -->
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>&copy; 2026 mandi.pk — Karachi's Livestock Marketplace. All rights reserved.</div>
+    <div>See the animal in person. Meet the bepari.</div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/mock-data.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/api.js"></script>
+<script>
+'use strict';
+
+const BepariCataloguePage = {
+  bepari: null,
+  animals: [],
+
+  breedImages: {
+    'Brahman': 'assets/breed-brahman.jpg',
+    'Cholistani': 'assets/breed-cholistani.jpg',
+    'Sahiwal': 'assets/breed-sahiwal.jpg',
+    'Kankrej': 'assets/breed-kankrej.jpg',
+    'Tharparkar': 'assets/breed-tharparkar.jpg',
+    'Dajjal': 'assets/breed-dajjal.jpg'
+  },
+
+  async init() {
+    const params = new URLSearchParams(window.location.search);
+    const bepariId = params.get('id') || 'bp-1';
+
+    this.bepari = await MPK.api.getBepariById(bepariId);
+    this.animals = await MPK.api.getAnimalsByBepari(bepariId);
+
+    // If no direct animals returned for that bepari, fallback to animals with this bepari_id or sample
+    if (!this.animals || this.animals.length === 0) {
+      this.animals = MPK_MOCK.animals.filter(a => a.bepari_id === bepariId);
+    }
+    if (this.animals.length === 0) {
+      this.animals = MPK_MOCK.animals.slice(0, 3);
+    }
+
+    this.render();
+  },
+
+  initials(name) {
+    return name.replace(/^(Haji|Seth|Bhai|Karim|Dost|Gul|Eisa)\s+/i, '').split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase();
+  },
+
+  fmtPKR(amount) {
+    return 'PKR ' + Number(amount).toLocaleString('en-PK');
+  },
+
+  getTeeth(months) {
+    if (months < 12) return 'Khiri';
+    if (months < 26) return 'Kacha';
+    if (months < 36) return '2-Daant';
+    return '4-Daant';
+  },
+
+  getAnimalPhoto(animal) {
+    if (animal.is_calf) return 'assets/breed-calf.jpg';
+    return this.breedImages[animal.breed] || 'assets/breed-sahiwal.jpg';
+  },
+
+  render() {
+    const b = this.bepari;
+    document.title = `${b.name} — Livestock Catalogue | mandi.pk`;
+    document.getElementById('crumb-bepari-name').textContent = b.name;
+
+    // Hero details
+    document.getElementById('hero-avatar').textContent = this.initials(b.name);
+    document.getElementById('hero-bepari-name').textContent = b.name;
+    document.getElementById('hero-bepari-tick').style.display = b.verified ? 'inline-flex' : 'none';
+    document.getElementById('hero-bepari-meta').textContent = `${b.area} • Shed #${10 + Number(b.id.replace('bp-', ''))} • Selling since ${b.since}`;
+    document.getElementById('stat-sold').textContent = `${b.animals_sold} Animals`;
+    document.getElementById('stat-stock').textContent = `${this.animals.length} Listed`;
+    document.getElementById('stat-rating').textContent = `${b.rating_avg.toFixed(1)} ★`;
+
+    const waPhone = '92' + b.phone.replace(/[^0-9]/g, '').slice(-10);
+    const waMsg = encodeURIComponent(`Salam ${b.name}, I am viewing your livestock catalogue on mandi.pk and want to inquire about visiting your stall.`);
+    document.getElementById('hero-btn-wa').href = `https://wa.me/${waPhone}?text=${waMsg}`;
+    document.getElementById('hero-btn-call').href = `tel:${b.phone}`;
+
+    // Catalog heading
+    document.getElementById('catalog-heading').textContent = `Animals Listed by ${b.name} (${this.animals.length})`;
+
+    // Grid of cards
+    const grid = document.getElementById('seller-animals-grid');
+    if (this.animals.length === 0) {
+      grid.innerHTML = '<div class="empty-catalog">No animals currently listed by this seller. Check back soon.</div>';
+      return;
+    }
+
+    grid.innerHTML = this.animals.map(animal => {
+      const teeth = this.getTeeth(animal.age_months);
+      const tagNum = animal.id.replace('an-', '');
+      const photo = this.getAnimalPhoto(animal);
+
+      return `
+      <article class="animal-dossier-card" onclick="window.location.href='animal.html?id=${animal.id}'">
+        <div class="dossier-lot-strip">
+          <span class="dossier-lot-code">LOT #PK-${tagNum.padStart(2, '0')}</span>
+          <span class="dossier-status-pill">
+            <span class="status-dot"></span> Available
+          </span>
+        </div>
+
+        <div class="dossier-photo-wrap">
+          <img src="${photo}" alt="${animal.breed} ${animal.gender}">
+          <div class="dossier-ear-tag">
+            <span class="gold-seal">&#9670;</span>
+            <span>TAG #${tagNum} &bull; ${teeth}</span>
+          </div>
+          <span class="dossier-top-badge">&#10003; Mandi Checked</span>
+        </div>
+
+        <div class="dossier-content">
+          <div class="dossier-headline-row">
+            <h3 class="dossier-breed-title">${animal.breed}</h3>
+            <span class="dossier-gender-badge">${animal.gender === 'male' ? 'Bull' : 'Cow'}</span>
+          </div>
+          <div class="dossier-origin-subtitle">${b.area} &bull; ${animal.is_calf ? 'Young Calf' : 'Qurbani Ready'}</div>
+
+          <div class="dossier-spec-matrix">
+            <div class="dossier-spec-col">
+              <span class="dossier-spec-k">WEIGHT</span>
+              <span class="dossier-spec-v">${animal.weight_kg} kg</span>
+            </div>
+            <div class="dossier-spec-col">
+              <span class="dossier-spec-k">AGE</span>
+              <span class="dossier-spec-v">${animal.age_months} mo</span>
+            </div>
+            <div class="dossier-spec-col">
+              <span class="dossier-spec-k">TEETH</span>
+              <span class="dossier-spec-v">${teeth}</span>
+            </div>
+          </div>
+
+          <div class="dossier-action-plate">
+            <div class="dossier-price-stack">
+              <span class="dossier-price-tag-sub">Agreed Mandi Rate</span>
+              <span class="dossier-price-num">${this.fmtPKR(animal.listed_price)}</span>
+            </div>
+            <a href="animal.html?id=${animal.id}" class="btn-dossier-book" onclick="event.stopPropagation();">
+              <span>Reserve Slot</span>
+              <span class="book-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </article>
+      `;
+    }).join('');
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => BepariCataloguePage.init());
+</script>
+</body>
+</html>

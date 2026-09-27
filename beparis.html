@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verified Mandi Beparis — Karachi's Trusted Livestock Sellers | mandi.pk</title>
+<meta name="description" content="Browse verified livestock sellers across Karachi's Super Highway, Rahmanabad, Bhains Colony, and Malir mandis with verified sales records and buyer reviews.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --bg-white: #ffffff;
+  --bg-cream: #faf7f2;
+  --bg-sand: #f5eee4;
+  --bg-sand-light: #fbf9f5;
+  --border-light: #e6dac6;
+  --border-subtle: #efe8dc;
+
+  --ink-primary: #1b120c;
+  --ink-secondary: #4a3628;
+  --ink-muted: #786555;
+  --ink-light: #a49385;
+
+  --brand-brown-dark: #32190b;
+  --brand-brown: #4e2b15;
+  --brand-brown-mid: #683c1e;
+  --brand-brown-light: #a37248;
+  --brand-tan: #d4b488;
+  --brand-tan-soft: #f4ece0;
+  --brand-tan-border: #e6dac6;
+
+  --accent-gold: #c09148;
+  --accent-blue-tick: #1d9bf0;
+  --accent-green: #1faa53;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --shadow-subtle: 0 4px 20px rgba(78,43,21,0.06);
+  --shadow-card: 0 8px 30px rgba(78,43,21,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg-cream);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Top Navbar ---------- */
+.site-nav {
+  background: var(--brand-brown-dark);
+  color: #fff;
+  border-bottom: 1px solid rgba(212,180,136,0.18);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-brand-logo {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav-brand-logo .tld {
+  color: var(--accent-gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color .2s;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #fff;
+}
+
+.nav-cta {
+  background: var(--accent-gold);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background .2s;
+}
+
+.nav-cta:hover {
+  background: #b0823b;
+}
+
+/* ---------- Breadcrumbs ---------- */
+.breadcrumb-bar {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 14px 0;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.breadcrumb-list a {
+  color: var(--ink-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb-list a:hover {
+  color: var(--brand-brown);
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  color: var(--ink-light);
+}
+
+.breadcrumb-current {
+  color: var(--brand-brown);
+  font-weight: 600;
+}
+
+/* ---------- Header Banner ---------- */
+.page-hero {
+  padding: 48px 0 36px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-brown);
+  background: var(--brand-tan-soft);
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--brand-brown);
+}
+
+.hero-desc {
+  max-width: 760px;
+  font-size: 16px;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+}
+
+/* ---------- Filter Row ---------- */
+.filter-section {
+  padding: 24px 0;
+}
+
+.filter-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--ink-secondary);
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.filter-pill:hover {
+  border-color: var(--brand-brown);
+}
+
+.filter-pill.active {
+  background: var(--brand-brown);
+  color: #fff;
+  border-color: var(--brand-brown);
+}
+
+/* ---------- Directory Grid ---------- */
+.directory-section {
+  padding: 10px 0 60px;
+}
+
+.bepari-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 840px) {
+  .bepari-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bepari-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.bepari-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.bepari-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.bepari-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--brand-brown);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bepari-info {
+  flex: 1;
+}
+
+.bepari-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.bepari-name {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.blue-tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  background: var(--accent-blue-tick);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.bepari-location {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-bottom: 4px;
+}
+
+.bepari-rating {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+/* 3-Column Stats Matrix */
+.bepari-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.matrix-cell {
+  background: var(--bg-cream);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.matrix-k {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.matrix-v {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brand-brown);
+}
+
+/* Actions Row */
+.bepari-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.btn-view-catalog {
+  flex: 1;
+  background: var(--brand-brown);
+  color: #fff;
+  padding: 11px 18px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all .2s;
+}
+
+.btn-view-catalog:hover {
+  background: var(--brand-brown-dark);
+}
+
+.btn-whatsapp-outline {
+  padding: 11px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: #25d366;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all .2s;
+}
+
+.btn-whatsapp-outline:hover {
+  background: #25d366;
+  color: #fff;
+  border-color: #25d366;
+}
+
+/* ---------- Trust Banner ---------- */
+.trust-banner-section {
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+  padding: 48px 0;
+}
+
+.trust-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.trust-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .trust-col-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trust-pillar {
+  background: var(--bg-cream);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.trust-pillar h4 {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--brand-brown);
+  margin-bottom: 8px;
+}
+
+.trust-pillar p {
+  font-size: 13.5px;
+  color: var(--ink-secondary);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--brand-brown-dark);
+  color: rgba(255,255,255,0.7);
+  padding: 40px 0;
+  font-size: 13px;
+  border-top: 1px solid rgba(212,180,136,0.15);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+</style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-logo">mandi<span class="tld">.pk</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#animals" class="nav-link">Browse Animals</a>
+      <a href="beparis.html" class="nav-link active">Verified Beparis</a>
+      <a href="index.html#how" class="nav-link">How It Works</a>
+      <a href="index.html#animals" class="nav-cta">Live Catalog &rarr;</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb-bar" aria-label="Breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-list">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <span class="breadcrumb-current">Verified Karachi Beparis</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-tag">&#9670; Karachi Livestock Network</div>
+    <h1 class="hero-title">Meet Karachi's <em>Verified Beparis.</em></h1>
+    <p class="hero-desc">
+      Every seller is vetted for accurate live weights, authentic daylight photography, and reliable mandi stalls. Click any bepari to browse their personal stock and book a private 30-minute viewing slot.
+    </p>
+  </div>
+</section>
+
+<!-- Filter Row -->
+<section class="filter-section">
+  <div class="container">
+    <div class="filter-row" id="area-filters">
+      <button class="filter-pill active" data-area="All">All Mandis</button>
+      <button class="filter-pill" data-area="Super Highway Mandi">Super Highway Mandi</button>
+      <button class="filter-pill" data-area="Rahmanabad Mandi">Rahmanabad Mandi</button>
+      <button class="filter-pill" data-area="Bhains Colony">Bhains Colony</button>
+      <button class="filter-pill" data-area="Cattle Colony Malir">Cattle Colony Malir</button>
+    </div>
+  </div>
+</section>
+
+<!-- Beparis Directory Grid -->
+<main class="directory-section">
+  <div class="container">
+    <div class="bepari-grid" id="beparis-container">
+      <!-- Dynamic render -->
+    </div>
+  </div>
+</main>
+
+<!-- Trust Banner -->
+<section class="trust-banner-section">
+  <div class="container">
+    <h3 class="trust-title">How Sellers Earn Verification on mandi.pk</h3>
+    <div class="trust-col-grid">
+      <div class="trust-pillar">
+        <h4>&#9670; Physical Shed Inspection</h4>
+        <p>mandi.pk field inspectors visit each bepari's stall to confirm physical presence and genuine health certificates before listing.</p>
+      </div>
+      <div class="trust-pillar">
+        <h4>&#9670; Live Weight Verification</h4>
+        <p>All weights are calibrated using certified on-site digital scales. No inflated estimates or deceptive claims.</p>
+      </div>
+      <div class="trust-pillar">
+        <h4>&#9670; 0% Buyer Surcharge</h4>
+        <p>Sellers agree to platform terms: the negotiated price is the final price paid at the mandi. Zero hidden fees.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>&copy; 2026 mandi.pk — Karachi's Livestock Marketplace. All rights reserved.</div>
+    <div>See the animal in person. Meet the bepari.</div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/mock-data.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/api.js"></script>
+<script>
+'use strict';
+
+const BeparisDirectoryPage = {
+  beparis: [],
+  activeArea: 'All',
+
+  async init() {
+    this.beparis = await MPK.api.getBeparis();
+    this.render();
+    this.bindFilters();
+  },
+
+  initials(name) {
+    return name.replace(/^(Haji|Seth|Bhai|Karim|Dost|Gul|Eisa)\s+/i, '').split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase();
+  },
+
+  render() {
+    const container = document.getElementById('beparis-container');
+    const filtered = this.activeArea === 'All' 
+      ? this.beparis 
+      : this.beparis.filter(b => b.area === this.activeArea);
+
+    container.innerHTML = filtered.map(b => {
+      const waPhone = '92' + b.phone.replace(/[^0-9]/g, '').slice(-10);
+      const waMsg = encodeURIComponent(`Salam ${b.name}, I found your profile on mandi.pk and want to inquire about your available animals.`);
+
+      return `
+      <article class="bepari-card">
+        <div class="bepari-card-top">
+          <div class="bepari-avatar">${this.initials(b.name)}</div>
+          <div class="bepari-info">
+            <div class="bepari-name-row">
+              <h2 class="bepari-name">${b.name}</h2>
+              ${b.verified ? '<span class="blue-tick" title="Verified Mandi Seller">&#10003;</span>' : ''}
+            </div>
+            <div class="bepari-location">${b.area} &bull; Selling since ${b.since}</div>
+            <div class="bepari-rating">&#9733; ${b.rating_avg.toFixed(1)} / 5.0 Rating</div>
+          </div>
+        </div>
+
+        <div class="bepari-matrix">
+          <div class="matrix-cell">
+            <span class="matrix-k">Animals Sold</span>
+            <span class="matrix-v">${b.animals_sold}</span>
+          </div>
+          <div class="matrix-cell">
+            <span class="matrix-k">Current Stock</span>
+            <span class="matrix-v">${b.animals_in_stock}</span>
+          </div>
+          <div class="matrix-cell">
+            <span class="matrix-k">Verification</span>
+            <span class="matrix-v" style="color:${b.verified ? 'var(--accent-blue-tick)' : 'var(--ink-muted)'};">${b.verified ? 'Verified ✓' : 'Standard'}</span>
+          </div>
+        </div>
+
+        <div class="bepari-actions">
+          <a href="bepari.html?id=${b.id}" class="btn-view-catalog">
+            <span>View Animals Catalogue</span>
+            <span>&rarr;</span>
+          </a>
+          <a href="https://wa.me/${waPhone}?text=${waMsg}" class="btn-whatsapp-outline" target="_blank" rel="noopener">
+            <span>&#128172; WhatsApp</span>
+          </a>
+        </div>
+      </article>
+      `;
+    }).join('');
+  },
+
+  bindFilters() {
+    document.querySelectorAll('#area-filters .filter-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#area-filters .filter-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        this.activeArea = btn.dataset.area;
+        this.render();
+      });
+    });
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => BeparisDirectoryPage.init());
+</script>
+</body>
+</html>

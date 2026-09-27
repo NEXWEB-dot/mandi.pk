@@ -43,6 +43,27 @@ const MPK = {
 
     async getStats() {
       return MPK_MOCK.stats;
+    },
+
+    async getAnimalById(id) {
+      if (!id) return MPK_MOCK.animals[0];
+      const found = MPK_MOCK.animals.find((a) => a.id === id);
+      if (found) {
+        const bepari = this._mockBepari(found.bepari_id);
+        return { ...found, bepari };
+      }
+      return MPK_MOCK.animals[0];
+    },
+
+    async getBepariById(id) {
+      if (!id) return MPK_MOCK.beparis[0];
+      const bepari = MPK_MOCK.beparis.find((b) => b.id === id);
+      return bepari || MPK_MOCK.beparis[0];
+    },
+
+    async getAnimalsByBepari(bepariId) {
+      if (!bepariId) return [];
+      return MPK_MOCK.animals.filter((a) => a.bepari_id === bepariId);
     }
   }
 };

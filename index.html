@@ -3,779 +3,3062 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>mandi.pk — Karachi's Mandi, Minus the Doubt | Verified Beparis & Booked Viewings</title>
-<meta name="description" content="Browse verified mandi beparis' livestock in Karachi, see real market prices, and book a 30-minute viewing slot before you negotiate. Qurbani animals, seen in person — never bought blind.">
+<title>mandi.pk — Karachi's Livestock Marketplace | See the animal. Meet the bepari.</title>
+<meta name="description" content="Karachi's trust-first livestock marketplace. Browse verified mandi beparis' stock, transparent market rates, and book private 30-minute in-person viewing slots for Qurbani.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preload" as="image" href="assets/hero-bull.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"mandi.pk","url":"https://mandi.pk/","description":"Karachi's trust-first livestock marketplace — verified beparis, booked viewing slots, transparent prices."}
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "mandi.pk",
+  "url": "https://mandi.pk/",
+  "description": "Karachi's livestock marketplace — verified beparis, booked 30-minute viewing slots, transparent mandi prices."
+}
 </script>
 <style>
-:root{
-  --white:#ffffff;--cream:#faf6ef;--paper:#f3eada;--sand:#ede2cd;
-  --ink:#2a1b10;--brown:#3b2314;--brown-mid:#5a3a22;--muted:#7a6a58;
-  --accent:#8a5a33;--accent-dark:#5f3d20;--accent-soft:#ead9bd;
-  --border:#e6d9c3;--border-soft:#efe6d4;
-  --ease-spring:cubic-bezier(0.34,1.56,0.64,1);--ease-out:cubic-bezier(0.16,1,0.3,1);
+:root {
+  /* Bespoke Typography System */
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Hero Dark Palette (matching user reference) */
+  --hero-bg: #0e0906;
+  --hero-gold: #cfa86e;
+  --hero-gold-light: #dfc293;
+
+  /* White & Earthy Brown Architecture */
+  --bg-white: #ffffff;
+  --bg-cream: #faf7f2;
+  --bg-sand: #f5eee4;
+  --bg-sand-light: #fbf9f5;
+  --bg-card: #ffffff;
+
+  /* Typography Colors */
+  --ink-primary: #1b120c;
+  --ink-secondary: #4a3628;
+  --ink-muted: #786555;
+  --ink-light: #a49385;
+
+  /* Brand Browns */
+  --brand-brown-dark: #32190b;
+  --brand-brown: #4e2b15;
+  --brand-brown-mid: #683c1e;
+  --brand-brown-light: #a37248;
+  --brand-tan: #d4b488;
+  --brand-tan-soft: #f4ece0;
+  --brand-tan-border: #e6dac6;
+
+  /* Accents */
+  --accent-gold: #c09148;
+  --accent-blue-tick: #1d9bf0;
+  --accent-green: #1faa53;
+
+  --border-light: #ebe1d1;
+  --border-soft: #f2eade;
+  --shadow-sm: 0 4px 16px rgba(50, 25, 11, 0.04);
+  --shadow-md: 0 12px 32px rgba(50, 25, 11, 0.08);
+  --shadow-lg: 0 24px 50px rgba(50, 25, 11, 0.12);
+
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
-.container{max-width:1240px;margin:0 auto;padding:0 40px}
-h1,h2,h3,.display{font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-0.02em}
-a{text-decoration:none;color:inherit}
-button{font-family:inherit;cursor:pointer;border:none;background:none}
-img,svg{display:block}
-::selection{background:var(--accent-soft);color:var(--brown)}
 
-/* ---------- nav ---------- */
-#nav-wrapper{position:fixed;top:16px;left:0;right:0;z-index:1000;display:flex;justify-content:center;pointer-events:none;padding:0 20px}
-nav.island{pointer-events:auto;display:flex;align-items:center;gap:22px;background:rgba(250,246,239,0.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:999px;padding:10px 12px 10px 22px;max-width:960px;width:100%;transition:background .3s,box-shadow .3s}
-#nav-wrapper.scrolled nav.island{background:rgba(255,255,255,0.96);box-shadow:0 8px 32px rgba(59,35,20,0.12)}
-.brand{display:flex;align-items:center;gap:10px;margin-right:6px}
-.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--brown);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.brand-mark svg{width:22px;height:22px}
-.brand-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.02em;color:var(--brown)}
-.brand-name .tld{color:var(--accent)}
-.nav-links{display:flex;gap:4px;margin:0 auto}
-.nav-links a{font-size:14px;font-weight:600;color:var(--brown-mid);padding:8px 14px;border-radius:999px;transition:color .2s,background .2s}
-.nav-links a:hover{color:var(--brown);background:var(--paper)}
-.nav-cta-group{display:flex;align-items:center;gap:10px}
-.btn-nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--cream);font-weight:800;font-size:13.5px;padding:10px 20px;border-radius:999px;transition:transform .3s var(--ease-spring),background .2s}
-.btn-nav-cta:hover{background:var(--accent-dark);color:#fff;transform:translateY(-1px)}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:12px;border-radius:999px;background:var(--brown)}
-.hamburger span{display:block;width:18px;height:2px;background:var(--cream);border-radius:2px;transition:transform .3s var(--ease-out),opacity .2s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-nav-overlay{position:fixed;inset:0;z-index:999;background:radial-gradient(circle at 30% 20%,#4a2d18,var(--ink));display:flex;flex-direction:column;justify-content:center;padding:0 32px;opacity:0;visibility:hidden;transition:opacity .35s var(--ease-out),visibility .35s}
-.mobile-nav-overlay.open{opacity:1;visibility:visible}
-.mobile-nav-overlay a{font-family:'Bricolage Grotesque',sans-serif;font-size:34px;font-weight:800;color:var(--cream);padding:14px 0;border-bottom:1px solid rgba(250,246,239,0.08);opacity:0;transform:scale(0.96) translateY(10px);transition:opacity .4s var(--ease-out),transform .4s var(--ease-out)}
-.mobile-nav-overlay.open a{opacity:1;transform:scale(1) translateY(0)}
-.mobile-nav-overlay.open a:nth-child(1){transition-delay:.08s}.mobile-nav-overlay.open a:nth-child(2){transition-delay:.14s}.mobile-nav-overlay.open a:nth-child(3){transition-delay:.2s}.mobile-nav-overlay.open a:nth-child(4){transition-delay:.26s}.mobile-nav-overlay.open a:nth-child(5){transition-delay:.32s}
-.mobile-nav-overlay a small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#d9c6a5;margin-bottom:2px}
-
-/* ---------- hero ---------- */
-.hero{position:relative;padding:168px 0 88px;background:linear-gradient(180deg,var(--paper) 0%,var(--cream) 100%);overflow:hidden}
-.hero::before{content:'';position:absolute;top:-180px;right:-140px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(138,90,51,0.12),transparent 68%)}
-.hero::after{content:'';position:absolute;bottom:-220px;left:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(59,35,20,0.08),transparent 70%)}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;z-index:1}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-dark);background:var(--white);border:1px solid var(--border);border-radius:999px;padding:8px 16px;margin-bottom:24px}
-.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:livePulse 2s infinite}
-@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(138,90,51,0.45)}50%{box-shadow:0 0 0 6px rgba(138,90,51,0)}}
-.hero h1{font-size:clamp(44px,5.6vw,76px);font-weight:800;line-height:1.02;letter-spacing:-0.03em;color:var(--brown);margin-bottom:24px}
-.hero h1 em{font-style:normal;color:var(--accent-dark);position:relative;white-space:nowrap}
-.hero h1 em::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:12px;background:var(--accent-soft);z-index:-1;border-radius:4px}
-.hero-sub{font-size:18px;color:var(--muted);max-width:520px;margin-bottom:34px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn-primary{position:relative;display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--cream);font-weight:800;font-size:15px;letter-spacing:0.02em;padding:16px 28px;border-radius:14px;overflow:hidden;transition:transform .3s var(--ease-spring),box-shadow .3s}
-.btn-primary::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,0.55),transparent);transform:skewX(-20deg);transition:left .6s var(--ease-out)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(138,90,51,0.4)}
-.btn-primary:hover::after{left:130%}
-.btn-ghost{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--brown);font-weight:700;font-size:15px;padding:16px 26px;border-radius:14px;border:1.5px solid var(--brown);transition:background .25s,color .25s}
-.btn-ghost:hover{background:var(--brown);color:var(--cream)}
-.btn-icon{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(59,35,20,0.12);font-size:13px;transition:transform .3s var(--ease-spring),background .2s,color .2s}
-.btn-primary:hover .btn-icon{transform:translateX(4px);background:var(--cream);color:var(--brown)}
-.hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
-.hero-art{position:relative;width:100%;max-width:480px;aspect-ratio:1/0.92;background:linear-gradient(145deg,var(--brown) 0%,var(--brown-mid) 55%,#6b4527 100%);border-radius:32px;overflow:hidden;box-shadow:0 30px 60px rgba(42,27,16,0.28)}
-.hero-art::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(250,246,239,0.14),transparent 52%)}
-.hero-art svg{position:absolute;inset:auto 0 -6px 0;width:100%;height:78%}
-.chip{position:absolute;display:flex;align-items:center;gap:9px;background:var(--white);border-radius:14px;padding:11px 16px;box-shadow:0 12px 32px rgba(42,27,16,0.16);font-size:13px;font-weight:700;color:var(--brown);z-index:2}
-.chip .chip-ico{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9px;font-size:15px;flex-shrink:0}
-.chip small{display:block;font-size:10.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
-.chip-verified{top:24px;left:-34px;animation:floaty 5.5s ease-in-out infinite}
-.chip-verified .chip-ico{background:var(--paper);color:var(--brown)}
-.chip-slot{bottom:84px;right:-30px;animation:floaty 6.5s .8s ease-in-out infinite}
-.chip-slot .chip-ico{background:var(--accent-soft);color:var(--accent-dark)}
-.chip-price{bottom:-18px;left:36px;animation:floaty 6s .4s ease-in-out infinite}
-.chip-price .chip-ico{background:var(--paper);color:var(--brown)}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.hero-stats{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:72px;background:var(--white);border:1px solid var(--border);border-radius:20px;padding:26px 10px;z-index:1;box-shadow:0 10px 34px rgba(59,35,20,0.07)}
-.stat{text-align:center;padding:0 18px;border-right:1px solid var(--border-soft)}
-.stat:last-child{border-right:none}
-.stat-num{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--brown);letter-spacing:-0.02em}
-.stat-num .unit{font-size:0.62em;color:var(--accent-dark)}
-.stat-label{font-size:11.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
-
-/* ---------- sections ---------- */
-section{padding:92px 0}
-.section-head{max-width:640px;margin-bottom:52px}
-.section-eyebrow{font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:14px}
-.section-heading{font-size:clamp(30px,3.6vw,46px);font-weight:800;line-height:1.08;color:var(--brown)}
-.section-sub{font-size:16.5px;color:var(--muted);margin-top:14px}
-
-/* trust cards */
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card-outer{background:var(--paper);border-radius:22px;padding:7px;transition:transform .35s var(--ease-spring),box-shadow .35s}
-.card-inner{background:var(--white);border-radius:16px;padding:32px 28px;height:100%}
-.card-outer:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(59,35,20,0.14)}
-.trust-ico{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:15px;background:var(--paper);color:var(--brown);font-size:26px;margin-bottom:20px}
-.trust-ico.brown{background:var(--accent-soft);color:var(--accent-dark)}
-.card-inner h3{font-size:21px;font-weight:800;color:var(--brown);margin-bottom:10px}
-.card-inner p{font-size:14.5px;color:var(--muted)}
-
-/* how it works */
-.how{background:var(--brown);position:relative;overflow:hidden}
-.how::before{content:'';position:absolute;top:-160px;left:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(250,246,239,0.08),transparent 70%)}
-.how .section-eyebrow{color:#d9c6a5}
-.how .section-heading{color:var(--cream)}
-.how .section-sub{color:rgba(250,246,239,0.65)}
-.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.steps::before{content:'';position:absolute;top:31px;left:6%;right:6%;height:1px;background:repeating-linear-gradient(90deg,rgba(217,198,165,0.45) 0 8px,transparent 8px 16px)}
-.step{position:relative;background:rgba(250,246,239,0.05);border:1px solid rgba(250,246,239,0.1);border-radius:18px;padding:28px 22px;backdrop-filter:blur(4px)}
-.step-num{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--accent);color:var(--cream);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;margin-bottom:18px}
-.step h3{font-size:17.5px;font-weight:800;color:var(--cream);margin-bottom:8px}
-.step p{font-size:13.5px;color:rgba(250,246,239,0.62)}
-.step .step-tag{display:inline-block;margin-top:14px;font-size:10.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#d9c6a5;border:1px solid rgba(217,198,165,0.4);border-radius:999px;padding:5px 12px}
-
-/* animals */
-.animal-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
-.filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;width:100%}
-.filter-chips{display:flex;flex-wrap:wrap;gap:8px}
-.filter-label{font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-right:6px}
-.fchip{font-size:13px;font-weight:700;color:var(--brown-mid);background:var(--white);border:1.5px solid var(--border);border-radius:999px;padding:8px 18px;transition:all .2s}
-.fchip:hover{border-color:var(--accent)}
-.fchip.active{background:var(--brown);color:var(--cream);border-color:var(--brown)}
-.animal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.animal-card{background:var(--paper);border-radius:22px;padding:7px;display:flex;flex-direction:column;transition:transform .35s var(--ease-spring),box-shadow .35s,opacity .3s}
-.animal-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(59,35,20,0.15)}
-.animal-card.hidden{display:none}
-.animal-art{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9.5;display:flex;align-items:flex-end;justify-content:center}
-.animal-art .art-bg{position:absolute;inset:0}
-.animal-art svg.bull{position:relative;width:72%;height:auto;margin-bottom:2%;opacity:0.94}
-.tint-brown .art-bg{background:linear-gradient(150deg,#8a5a33,#5a3a22)}
-.tint-sand .art-bg{background:linear-gradient(150deg,#cbb389,#9a7d52)}
-.tint-gold .art-bg{background:linear-gradient(150deg,#b3987a,#7c5f43)}
-.tint-dark .art-bg{background:linear-gradient(150deg,#4a2d18,#2a1b10)}
-.animal-art svg.bull path{fill:rgba(250,246,239,0.92)}
-.badge-verified{position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:var(--cream);font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;border-radius:999px;padding:6px 12px;z-index:2}
-.badge-calf{position:absolute;top:12px;right:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(250,246,239,0.92);color:var(--brown);font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;border-radius:999px;padding:6px 12px;z-index:2}
-.animal-body{background:var(--white);border-radius:16px;padding:22px 20px;display:flex;flex-direction:column;flex:1}
-.animal-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:4px}
-.animal-breed{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:800;color:var(--brown);letter-spacing:-0.01em}
-.animal-gender{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);background:var(--cream);border-radius:999px;padding:5px 12px;flex-shrink:0}
-.animal-meta{display:flex;gap:14px;font-size:13px;color:var(--muted);font-weight:600;margin:8px 0 14px}
-.animal-meta span{display:inline-flex;align-items:center;gap:6px}
-.animal-meta i{font-style:normal;color:var(--accent-dark)}
-.animal-bepari{font-size:12.5px;color:var(--muted);font-weight:600;margin-bottom:16px}
-.animal-bepari b{color:var(--brown);font-weight:800}
-.animal-bepari .mini-verified{color:var(--accent-dark);font-size:11px;font-weight:800}
-.animal-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto}
-.animal-price{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;color:var(--brown)}
-.animal-price small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
-.btn-interested{display:inline-flex;align-items:center;gap:8px;background:var(--brown);color:var(--cream);font-weight:800;font-size:13px;padding:11px 20px;border-radius:12px;transition:background .2s,transform .3s var(--ease-spring)}
-.btn-interested:hover{background:var(--accent);color:var(--brown);transform:translateY(-2px)}
-.empty-filter{display:none;text-align:center;color:var(--muted);font-weight:600;padding:40px 0}
-.empty-filter.show{display:block}
-
-/* beparis */
-.bepari-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.bepari-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:28px;transition:transform .35s var(--ease-spring),box-shadow .35s,border-color .3s}
-.bepari-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(59,35,20,0.13);border-color:var(--accent)}
-.bepari-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-.bepari-avatar{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:16px;background:var(--paper);color:var(--brown);font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:800;flex-shrink:0;position:relative}
-.bepari-avatar .vdot{position:absolute;bottom:-4px;right:-4px;display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--accent);color:var(--cream);font-size:10px;border:2px solid var(--white)}
-.bepari-card h3{font-size:18px;font-weight:800;color:var(--brown)}
-.bepari-card .area{font-size:12.5px;color:var(--muted);font-weight:600;margin-top:2px}
-.stars{display:inline-flex;align-items:center;gap:4px;color:var(--accent-dark);font-weight:800;font-size:14px}
-.stars .cnt{color:var(--muted);font-weight:600;font-size:12.5px}
-.bepari-stats{display:flex;gap:0;border-top:1px solid var(--border-soft);margin-top:16px;padding-top:16px}
-.bstat{flex:1;text-align:center;border-right:1px solid var(--border-soft)}
-.bstat:last-child{border-right:none}
-.bstat b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:800;color:var(--brown)}
-.bstat span{font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
-.bepari-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13.5px;font-weight:800;color:var(--accent-dark);transition:gap .25s}
-.bepari-link:hover{gap:12px}
-
-/* pricing */
-.pricing-band{background:var(--paper);border-radius:32px;padding:64px 56px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.pricing-band .section-heading{margin-bottom:0}
-.split-card{background:var(--white);border-radius:20px;border:1px solid var(--border);overflow:hidden;box-shadow:0 14px 40px rgba(59,35,20,0.08)}
-.split-total{display:flex;justify-content:space-between;align-items:center;background:var(--brown);color:var(--cream);padding:20px 26px}
-.split-total b{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;font-weight:800;letter-spacing:-0.01em}
-.split-total span{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#d9c6a5}
-.split-row{display:flex;justify-content:space-between;align-items:center;padding:18px 26px;border-top:1px solid var(--border-soft)}
-.split-row .who b{display:block;font-size:15px;font-weight:800;color:var(--brown)}
-.split-row .who span{font-size:12.5px;color:var(--muted)}
-.split-row .amt{font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:800;color:var(--brown);text-align:right}
-.split-row .amt small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-dark)}
-.split-note{padding:14px 26px;font-size:12.5px;color:var(--muted);background:var(--cream);border-top:1px solid var(--border-soft)}
-
-/* bepari cta */
-.cta-band{position:relative;background:linear-gradient(135deg,var(--brown) 0%,var(--brown-mid) 100%);border-radius:32px;padding:72px 56px;text-align:center;overflow:hidden}
-.cta-band::before{content:'';position:absolute;top:-120px;right:-100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(250,246,239,0.15),transparent 68%)}
-.cta-band h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;color:var(--cream);margin-bottom:14px;position:relative}
-.cta-band p{font-size:16px;color:rgba(250,246,239,0.7);max-width:520px;margin:0 auto 32px;position:relative}
-.cta-band .btn-primary{position:relative}
-
-/* footer */
-footer{background:var(--ink);color:var(--cream);padding:72px 0 32px;margin-top:40px}
-.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(250,246,239,0.1)}
-.footer-brand .brand-name{color:var(--cream)}
-.footer-brand .brand-name .tld{color:#d9c6a5}
-.footer-brand p{font-size:14px;color:rgba(250,246,239,0.55);margin-top:14px;max-width:300px}
-.footer-col h4{font-size:11.5px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-.footer-col a{display:block;font-size:14px;color:rgba(250,246,239,0.65);padding:5px 0;transition:color .2s}
-.footer-col a:hover{color:var(--cream)}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:28px;font-size:12.5px;color:rgba(250,246,239,0.45);flex-wrap:wrap}
-
-/* modal */
-.modal-backdrop{position:fixed;inset:0;z-index:1100;background:rgba(42,27,16,0.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
-.modal-backdrop.open{opacity:1;visibility:visible}
-.modal{background:var(--cream);border-radius:24px;padding:36px 34px;max-width:440px;width:100%;transform:scale(0.92) translateY(14px);transition:transform .35s var(--ease-spring);position:relative}
-.modal-backdrop.open .modal{transform:scale(1) translateY(0)}
-.modal-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;background:var(--paper);color:var(--brown);font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center}
-.modal .modal-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:8px}
-.modal h3{font-size:24px;font-weight:800;color:var(--brown);margin-bottom:6px}
-.modal .modal-sub{font-size:14px;color:var(--muted);margin-bottom:22px}
-.modal .bepari-line{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:12px}
-.modal .bepari-line .bepari-avatar{width:44px;height:44px;font-size:16px;border-radius:12px}
-.modal .bepari-line b{display:block;font-size:15px;color:var(--brown)}
-.modal .bepari-line span{font-size:12.5px;color:var(--muted)}
-.modal .msg-preview{font-size:12.5px;color:var(--muted);background:var(--white);border:1px dashed var(--border);border-radius:12px;padding:12px 14px;margin-bottom:20px;line-height:1.5}
-.btn-whatsapp{display:flex;justify-content:center;align-items:center;gap:10px;width:100%;background:#1faa53;color:#fff;font-weight:800;font-size:15px;padding:15px;border-radius:14px;transition:background .2s,transform .3s var(--ease-spring)}
-.btn-whatsapp:hover{background:#179044;transform:translateY(-2px)}
-.modal .modal-note{font-size:11.5px;color:var(--muted);text-align:center;margin-top:14px}
-
-/* reveal */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}
-
-/* responsive */
-@media (max-width:1020px){
-  .hero-grid{grid-template-columns:1fr;gap:48px}
-  .hero-visual{order:-1;max-width:440px;margin:0 auto}
-  .hero{padding-top:140px}
-  .trust-grid,.animal-grid,.bepari-strip{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .steps::before{display:none}
-  .pricing-band{grid-template-columns:1fr;padding:48px 36px;gap:36px}
-  .footer-top{grid-template-columns:1fr 1fr}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-white);
+  color: var(--ink-secondary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
-@media (max-width:720px){
-  .container{padding:0 20px}
-  .nav-links,.btn-nav-cta{display:none}
-  .hamburger{display:flex}
-  .hero{padding:126px 0 64px}
-  .hero h1{font-size:clamp(38px,10vw,52px)}
-  .hero h1 em::after{height:8px;bottom:3px}
-  .hero-stats{grid-template-columns:repeat(2,1fr);gap:20px 0;padding:22px 6px}
-  .stat{border-right:none}
-  .stat:nth-child(odd){border-right:1px solid var(--border-soft)}
-  .trust-grid,.animal-grid,.bepari-strip{grid-template-columns:1fr}
-  .chip-verified{left:-6px}.chip-slot{right:-6px}
-  .chip-price{left:10px;bottom:-14px}
-  section{padding:64px 0}
-  .steps{grid-template-columns:1fr}
-  .pricing-band{padding:36px 22px;border-radius:24px}
-  .cta-band{padding:52px 26px;border-radius:24px}
-  .footer-top{grid-template-columns:1fr}
+
+.serif { 
+  font-family: var(--font-serif);
+  font-variation-settings: 'opsz' 36, 'WONK' 1;
+}
+.sans { font-family: var(--font-sans); }
+.mono { font-family: var(--font-mono); }
+
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+img { display: block; max-width: 100%; height: auto; }
+::selection { background: var(--brand-tan); color: var(--brand-brown-dark); }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+
+/* ================= FLOATING NAVIGATION ================= */
+#nav-wrapper {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 0 24px;
+  pointer-events: none;
+  transition: transform .3s ease;
+}
+
+nav.island-header {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1160px;
+  padding: 12px 18px 12px 28px;
+  border-radius: 999px;
+  background: rgba(18, 11, 7, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  transition: all .35s var(--ease-smooth);
+}
+
+#nav-wrapper.scrolled nav.island-header {
+  background: rgba(18, 11, 7, 0.95);
+  border-color: rgba(207, 168, 110, 0.28);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.brand-link {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+}
+
+.brand-title {
+  font-family: var(--font-serif);
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+}
+
+.brand-title .brand-tld {
+  color: var(--hero-gold);
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.nav-center-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+}
+
+.nav-menu-item {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  padding: 8px 18px;
+  border-radius: 999px;
+  transition: all .2s ease;
+}
+
+.nav-menu-item:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-nav-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 9px 20px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  transition: all .25s var(--ease-smooth);
+}
+
+.btn-nav-outline:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+/* Mobile nav panel */
+.mobile-nav-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: radial-gradient(circle at top right, #2a1508, #0c0704 80%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .35s var(--ease-smooth);
+}
+
+.mobile-nav-panel.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-panel a {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-panel a small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hero-gold);
+  margin-bottom: 4px;
+}
+
+/* ================= HERO STAGE (TEXT FLUSH TO LEFT) ================= */
+.hero-stage {
+  position: relative;
+  height: clamp(680px, 100vh, 920px);
+  display: flex;
+  align-items: center;
+  padding: 120px 0 60px;
+  background-color: var(--hero-bg);
+  background-image: 
+    linear-gradient(90deg, 
+      rgba(14, 9, 6, 0.98) 0%, 
+      rgba(14, 9, 6, 0.92) 34%, 
+      rgba(14, 9, 6, 0.50) 62%, 
+      rgba(14, 9, 6, 0.12) 100%
+    ),
+    radial-gradient(ellipse at 80% 40%, rgba(207, 168, 110, 0.12) 0%, transparent 60%),
+    url('assets/hero-bull.jpg');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(14, 9, 6, 0.4) 0%, transparent 25%, transparent 75%, rgba(14, 9, 6, 0.88) 100%);
+}
+
+.hero-container-left {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-copy-box {
+  max-width: 630px;
+  text-align: left;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--hero-gold);
+  margin-bottom: 22px;
+}
+
+.hero-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(44px, 5.8vw, 78px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.hero-headline .hero-brand-name {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.hero-headline .hero-line {
+  display: block;
+}
+
+.hero-headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: #faebdc;
+}
+
+.hero-subtext {
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 510px;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+
+.hero-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(145deg, #64391c 0%, #46240f 100%);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(217, 180, 130, 0.45);
+  box-shadow: 0 10px 28px rgba(70, 36, 15, 0.45);
+  transition: all .3s var(--ease-spring);
+}
+
+.btn-hero-primary:hover {
+  background: linear-gradient(145deg, #784523 0%, #542b13 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(70, 36, 15, 0.6);
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(22, 14, 9, 0.65);
+  color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+  transition: all .25s ease;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.hero-floating-pills {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 42px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+.hero-pill .pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hero-gold);
+}
+
+/* ================= WHITE METRICS BANNER ================= */
+.stats-banner-wrap {
+  position: relative;
+  z-index: 20;
+  margin-top: -42px;
+}
+
+.stats-banner {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 34px 28px;
+  box-shadow: 0 16px 40px rgba(50, 25, 11, 0.07);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 0 16px;
+  border-right: 1px solid var(--border-soft);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-value {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.4vw, 44px);
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.stat-value .gold {
+  color: var(--accent-gold);
+  font-size: 0.85em;
+}
+
+.stat-desc {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 6px;
+}
+
+/* ================= SECTION HEADINGS (WHITE / BROWN THEME) ================= */
+section {
+  padding: 96px 0;
+  position: relative;
+}
+
+.section-intro {
+  max-width: 680px;
+  margin-bottom: 52px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-brown);
+  margin-bottom: 12px;
+}
+
+.section-tag::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background: var(--brand-brown-light);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 3.8vw, 48px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--ink-primary);
+  letter-spacing: -0.02em;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--brand-brown);
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: var(--ink-muted);
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+/* ================= TRUST CARDS ================= */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.trust-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 38px 30px;
+  box-shadow: var(--shadow-sm);
+  transition: all .35s var(--ease-spring);
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand-brown), var(--brand-tan));
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.trust-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--brand-tan);
+  box-shadow: var(--shadow-md);
+}
+
+.trust-card:hover::before {
+  opacity: 1;
+}
+
+.trust-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--brand-tan-soft);
+  border: 1px solid var(--brand-tan-border);
+  color: var(--brand-brown);
+  font-size: 24px;
+  margin-bottom: 22px;
+}
+
+.trust-card h3 {
+  font-family: var(--font-serif);
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 10px;
+}
+
+.trust-card p {
+  font-size: 15px;
+  color: var(--ink-muted);
+  line-height: 1.62;
+}
+
+/* ================= HOW IT WORKS ================= */
+.how-section {
+  background: var(--bg-sand-light);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.steps-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.step-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 32px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all .3s ease;
+}
+
+.step-card:hover {
+  border-color: var(--brand-brown-light);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.step-number {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--brand-brown);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.step-card h3 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.step-tag {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-brown);
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--brand-tan-soft);
+  border: 1px solid var(--brand-tan-border);
+}
+
+/* ================= LIVE CATALOG WITH BESPOKE MANDI DOSSIER CARDS ================= */
+.catalog-section {
+  background: var(--bg-white);
+}
+
+.filter-bar-wrap {
+  background: var(--bg-sand-light);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 18px 24px;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filter-row-flex {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-label-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-brown);
+  min-width: 64px;
+}
+
+.filter-chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-pill {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-secondary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 7px 16px;
+  transition: all .2s ease;
+}
+
+.filter-pill:hover {
+  background: var(--brand-tan-soft);
+  color: var(--brand-brown);
+  border-color: var(--brand-tan);
+}
+
+.filter-pill.active {
+  background: var(--brand-brown);
+  color: #ffffff;
+  font-weight: 600;
+  border-color: var(--brand-brown);
+  box-shadow: 0 4px 14px rgba(78, 43, 21, 0.25);
+}
+
+/* ================= BESPOKE PRODUCT CARD (MANDI AUCTION DOSSIER) ================= */
+.animal-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.animal-dossier-card {
+  background: #ffffff;
+  border: 1px solid #e3d7c5;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(50, 25, 11, 0.04);
+  transition: all .35s var(--ease-smooth);
+  cursor: pointer;
+  position: relative;
+}
+
+.animal-dossier-card:hover {
+  transform: translateY(-6px);
+  border-color: #c9a475;
+  box-shadow: 0 16px 40px rgba(50, 25, 11, 0.12);
+}
+
+.animal-dossier-card.hidden {
+  display: none;
+}
+
+/* Archival Dossier Lot Header */
+.dossier-lot-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #faf6ef;
+  border-bottom: 1px solid #eadbc6;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.dossier-lot-code {
+  color: var(--brand-brown-dark);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.dossier-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #178a42;
+}
+
+.dossier-status-pill::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1faa53;
+  box-shadow: 0 0 0 2px rgba(31, 170, 83, 0.2);
+}
+
+/* Photographic Presentation */
+.dossier-photo-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: #ebdcc8;
+}
+
+.dossier-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s var(--ease-smooth);
+}
+
+.animal-dossier-card:hover .dossier-photo-wrap img {
+  transform: scale(1.04);
+}
+
+/* Ear Tag Plaque */
+.dossier-ear-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(18, 11, 7, 0.85);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+}
+
+.dossier-ear-tag .gold-seal {
+  color: #dfc293;
+}
+
+.dossier-top-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #381e0e;
+  border: 1px solid rgba(84, 49, 24, 0.18);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 4px 9px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Dossier Content Body */
+.dossier-content {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.dossier-headline-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.dossier-breed-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.dossier-gender-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-brown);
+  background: #f4ecdf;
+  border: 1px solid #e2d2bb;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.dossier-origin-subtitle {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+/* Structured 3-Column Spec Matrix */
+.dossier-spec-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #faf6ef;
+  border: 1px solid #ebdcc8;
+  border-radius: 8px;
+  padding: 10px 8px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.dossier-spec-col {
+  border-right: 1px solid #ebdcc8;
+  padding: 0 4px;
+}
+
+.dossier-spec-col:last-child {
+  border-right: none;
+}
+
+.dossier-spec-k {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8e7560;
+  margin-bottom: 2px;
+}
+
+.dossier-spec-v {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+}
+
+/* Bepari Credibility Line */
+.dossier-seller-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--ink-secondary);
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.dossier-seller-name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dossier-seller-name strong {
+  color: var(--ink-primary);
+  font-weight: 600;
+}
+
+.dossier-seller-rating {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-muted);
+}
+
+/* Price & Booking Plate */
+.dossier-action-plate {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dossier-price-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.dossier-price-tag-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8e7560;
+  margin-bottom: 2px;
+}
+
+.dossier-price-num {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.btn-dossier-book {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand-brown-dark);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  border-radius: 8px;
+  border: 1px solid #6b4020;
+  box-shadow: 0 4px 12px rgba(50, 25, 11, 0.22);
+  transition: all .25s ease;
+  white-space: nowrap;
+}
+
+.btn-dossier-book:hover {
+  background: var(--brand-brown);
+  border-color: #8d562b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(50, 25, 11, 0.38);
+}
+
+.btn-dossier-book .book-arrow {
+  color: #dfc293;
+  transition: transform .2s ease;
+}
+
+.btn-dossier-book:hover .book-arrow {
+  transform: translateX(3px);
+}
+
+.catalog-empty-state {
+  display: none;
+  text-align: center;
+  padding: 60px 0;
+  color: var(--ink-muted);
+}
+
+.catalog-empty-state.show {
+  display: block;
+}
+
+/* ================= BLUE TICK BADGE ================= */
+.blue-tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--accent-blue-tick);
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 900;
+  box-shadow: 0 2px 6px rgba(29, 155, 240, 0.35);
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* ================= TRANSPARENT PRICING & SPLIT CALCULATOR ================= */
+.pricing-calculator-section {
+  background: var(--bg-cream);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.calculator-card-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.calc-slider-box {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 28px;
+}
+
+.slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+.slider-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-brown);
+}
+
+.slider-current-val {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+}
+
+input[type="range"].luxury-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: var(--brand-tan-soft);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"].luxury-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--brand-brown);
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(78, 43, 21, 0.4);
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+
+input[type="range"].luxury-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.quick-chips-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.calc-preset-chip {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--brand-brown-mid);
+  background: var(--bg-sand);
+  border: 1px solid var(--brand-tan-border);
+  border-radius: 6px;
+  padding: 6px 14px;
+  transition: all .2s;
+}
+
+.calc-preset-chip:hover {
+  background: var(--brand-brown);
+  color: #ffffff;
+  border-color: var(--brand-brown);
+}
+
+/* Split Ledger Display */
+.split-ledger-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.split-ledger-header {
+  background: var(--brand-brown-dark);
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+
+.split-ledger-header .total-title {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-tan);
+}
+
+.split-ledger-header .total-amount {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.split-ledger-body {
+  padding: 26px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.split-party-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.split-party-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.party-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.party-sub {
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.party-amount {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+  text-align: right;
+}
+
+.party-amount .percent-tag {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--brand-brown-light);
+  letter-spacing: 0.08em;
+}
+
+.split-guarantee-note {
+  background: var(--brand-tan-soft);
+  border-top: 1px solid var(--brand-tan-border);
+  padding: 16px 30px;
+  font-size: 13px;
+  color: var(--ink-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.split-guarantee-note .check-gold {
+  color: var(--brand-brown);
+  font-weight: 800;
+}
+
+/* ================= BEPARIS SECTION ================= */
+.beparis-section {
+  background: var(--bg-white);
+}
+
+.beparis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.bepari-profile-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: all .35s var(--ease-spring);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bepari-profile-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--brand-tan);
+  box-shadow: var(--shadow-md);
+}
+
+.bepari-card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.bepari-avatar-monogram {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  background: var(--brand-tan-soft);
+  border: 1px solid var(--brand-tan-border);
+  color: var(--brand-brown);
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bepari-title-h3 {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  display: flex;
+  align-items: center;
+}
+
+.bepari-meta-sub {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+
+.bepari-rating-star-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-gold);
+  margin-top: 4px;
+  font-weight: 700;
+}
+
+.bepari-numbers-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.bepari-num-item strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+}
+
+.bepari-num-item span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.bepari-view-catalog-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--brand-brown);
+  margin-top: auto;
+  transition: gap .25s ease;
+}
+
+.bepari-view-catalog-link:hover {
+  gap: 12px;
+  color: var(--brand-brown-dark);
+}
+
+/* ================= YEAR-ROUND GROWTH TRACKING SHOWCASE ================= */
+.growth-section {
+  background: var(--bg-sand-light);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.growth-feature-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.growth-preview-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.growth-card-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.growth-badge {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-brown);
+  background: var(--brand-tan-soft);
+  border: 1px solid var(--brand-tan-border);
+  border-radius: 4px;
+  padding: 5px 12px;
+}
+
+.growth-timeline-events {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.growth-event-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-sand-light);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+.event-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand-brown);
+  flex-shrink: 0;
+}
+
+.event-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.event-sub {
+  font-size: 12.5px;
+  color: var(--ink-muted);
+}
+
+/* ================= BEPARI ONBOARDING CTA ================= */
+.cta-banner-section {
+  padding: 72px 0 100px;
+  background: var(--bg-white);
+}
+
+.cta-banner-box {
+  background: linear-gradient(135deg, #40210e 0%, #261307 100%);
+  border-radius: 20px;
+  padding: 68px 52px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  color: #ffffff;
+}
+
+.cta-banner-box h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 3.8vw, 46px);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.cta-banner-box p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 580px;
+  margin: 0 auto 34px;
+  line-height: 1.6;
+}
+
+/* ================= FOOTER ================= */
+footer.mandi-footer {
+  background: #180e07;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 80px 0 36px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand-col .brand-title {
+  margin-bottom: 16px;
+}
+
+.footer-brand-col p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 320px;
+}
+
+.footer-nav-col h4 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hero-gold);
+  margin-bottom: 20px;
+}
+
+.footer-nav-col a {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.68);
+  padding: 6px 0;
+  transition: all .2s ease;
+}
+
+.footer-nav-col a:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ================= DEDICATED MODALS / VIEWS ================= */
+.full-view-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(14, 9, 6, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .35s var(--ease-smooth);
+}
+
+.full-view-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.full-view-panel {
+  background: #ffffff !important;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 980px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  position: relative;
+  transform: scale(0.96) translateY(12px);
+  transition: transform .35s var(--ease-spring);
+  color: var(--ink-primary);
+}
+
+.full-view-overlay.open .full-view-panel {
+  transform: scale(1) translateY(0);
+}
+
+.view-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-sand);
+  border: 1px solid var(--border-light);
+  color: var(--ink-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  z-index: 10;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.view-close-btn:hover {
+  background: var(--brand-brown);
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* Animal Details Layout */
+.animal-details-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 36px;
+  padding: 36px 36px 44px;
+}
+
+.animal-details-media {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.animal-main-photo-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background: #ebdcc8;
+}
+
+.animal-main-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.animal-photo-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(24, 13, 6, 0.9);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.animal-specs-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spec-chip {
+  background: var(--bg-cream);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-secondary);
+}
+
+.spec-chip b {
+  color: var(--brand-brown);
+  font-weight: 700;
+}
+
+.animal-details-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-breed-heading {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 6px;
+  letter-spacing: -0.015em;
+}
+
+.details-mandi-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-bottom: 18px;
+}
+
+.details-price-badge {
+  background: var(--bg-sand-light);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 22px;
+}
+
+.details-price-badge .price-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.details-price-badge .price-number {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+}
+
+.details-price-badge .split-hint {
+  font-size: 12.5px;
+  color: var(--brand-brown);
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* Seller Card in Details */
+.details-seller-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-cream);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+
+.details-seller-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--brand-brown);
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.details-seller-name {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  display: flex;
+  align-items: center;
+}
+
+.details-seller-sub {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-muted);
+}
+
+/* Slot Selector Section */
+.slot-select-title {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-brown);
+  margin-bottom: 10px;
+}
+
+.slot-day-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.day-tab-btn {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 6px;
+  background: var(--bg-sand);
+  border: 1px solid var(--border-light);
+  color: var(--ink-secondary);
+  transition: all .2s;
+}
+
+.day-tab-btn.active {
+  background: var(--brand-brown);
+  color: #ffffff;
+  border-color: var(--brand-brown);
+}
+
+.slot-time-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.time-slot-btn {
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-light);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-primary);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all .2s;
+}
+
+.time-slot-btn:hover {
+  border-color: var(--brand-brown-light);
+  background: var(--bg-cream);
+}
+
+.time-slot-btn.active {
+  background: var(--brand-tan-soft);
+  border-color: var(--brand-brown);
+  color: var(--brand-brown-dark);
+  font-weight: 700;
+}
+
+.time-slot-btn .slot-icon {
+  font-size: 14px;
+  color: var(--brand-brown);
+  opacity: 0;
+}
+
+.time-slot-btn.active .slot-icon {
+  opacity: 1;
+}
+
+/* User Details Form for Booking */
+.booking-form-box {
+  background: var(--bg-sand-light);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-field label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 5px;
+}
+
+.form-field input, .form-field select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  background: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--ink-primary);
+  outline: none;
+}
+
+.form-field input:focus, .form-field select:focus {
+  border-color: var(--brand-brown);
+}
+
+.btn-submit-booking {
+  width: 100%;
+  background: var(--brand-brown);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--brand-brown-light);
+  box-shadow: 0 6px 20px rgba(78, 43, 21, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 24px;
+  transition: all .25s var(--ease-spring);
+  cursor: pointer;
+}
+
+.btn-submit-booking:hover {
+  background: var(--brand-brown-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(78, 43, 21, 0.45);
+}
+
+/* ================= PREMIUM BROWN TICK ANIMATION SCREEN ================= */
+.booking-confirmed-screen {
+  display: none;
+  text-align: center;
+  padding: 48px 32px;
+}
+
+.booking-confirmed-screen.active {
+  display: block;
+}
+
+.premium-tick-animation-wrap {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 24px;
+  position: relative;
+}
+
+.premium-tick-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.premium-tick-circle {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  stroke-width: 4;
+  stroke: var(--brand-brown);
+  fill: var(--brand-tan-soft);
+  animation: drawCircle 0.85s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.premium-tick-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: var(--brand-brown);
+  fill: none;
+  animation: drawCheck 0.5s 0.65s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+@keyframes drawCircle {
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes drawCheck {
+  100% { stroke-dashoffset: 0; }
+}
+
+.confirmed-title {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+  margin-bottom: 8px;
+}
+
+.confirmed-sub {
+  font-size: 16px;
+  color: var(--ink-muted);
+  max-width: 480px;
+  margin: 0 auto 28px;
+}
+
+.reservation-ticket-card {
+  background: var(--bg-cream);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 24px;
+  max-width: 460px;
+  margin: 0 auto 28px;
+  text-align: left;
+}
+
+.ticket-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed var(--border-light);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.ticket-code {
+  font-family: var(--font-mono);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--brand-brown);
+}
+
+.ticket-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.ticket-line span.label {
+  color: var(--ink-muted);
+}
+
+.ticket-line span.value {
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.confirmed-actions-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-confirmed-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-green);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 13px 26px;
+  border-radius: 8px;
+  transition: all .2s;
+}
+
+.btn-confirmed-wa:hover {
+  background: #179344;
+  transform: translateY(-2px);
+}
+
+.btn-confirmed-close {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-sand);
+  border: 1px solid var(--border-light);
+  color: var(--brand-brown);
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 13px 24px;
+  border-radius: 8px;
+}
+
+/* ================= BEPARIS DIRECTORY VIEW ================= */
+.beparis-directory-panel {
+  padding: 40px;
+}
+
+.directory-header-row {
+  margin-bottom: 32px;
+}
+
+.directory-grid-full {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.directory-bepari-card {
+  background: var(--bg-cream);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.directory-bepari-card:hover {
+  border-color: var(--brand-brown);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.dir-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.dir-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: var(--brand-brown);
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dir-name {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  display: flex;
+  align-items: center;
+}
+
+.dir-location {
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.dir-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 12px 8px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.dir-metric b {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+}
+
+.dir-metric span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.btn-open-seller-catalog {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-brown);
+  transition: all .2s;
+}
+
+.btn-open-seller-catalog:hover {
+  background: var(--brand-brown);
+  color: #ffffff;
+  border-color: var(--brand-brown);
+}
+
+/* ================= INDIVIDUAL BEPARI CATALOGUE VIEW ================= */
+.bepari-catalog-view-panel {
+  padding: 40px;
+}
+
+.seller-profile-banner {
+  background: var(--bg-sand-light);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.seller-bio-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.seller-bio-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 14px;
+  background: var(--brand-brown);
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.seller-banner-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  display: flex;
+  align-items: center;
+}
+
+.seller-banner-loc {
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+
+.seller-stats-strip {
+  display: flex;
+  gap: 16px;
+}
+
+.seller-stat-pill {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: var(--ink-secondary);
+}
+
+.seller-stat-pill b {
+  color: var(--brand-brown);
+  font-family: var(--font-mono);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1060px) {
+  .hero-stage {
+    padding: 110px 0 50px;
+    background-position: center;
+  }
+  .animal-cards-grid,
+  .trust-grid,
+  .beparis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .steps-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .calculator-card-layout,
+  .growth-feature-box,
+  .animal-details-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .directory-grid-full {
+    grid-template-columns: 1fr;
+  }
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  .hero-container-left {
+    padding: 0 24px;
+  }
+  .nav-center-menu,
+  .btn-nav-outline {
+    display: none;
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+  .hero-stage {
+    height: auto;
+    min-height: 640px;
+    padding: 110px 0 60px;
+    background-image: 
+      linear-gradient(180deg, 
+        rgba(14, 9, 6, 0.94) 0%, 
+        rgba(14, 9, 6, 0.88) 55%, 
+        rgba(14, 9, 6, 0.98) 100%
+      ),
+      url('assets/hero-bull.jpg');
+  }
+  .hero-headline {
+    font-size: clamp(38px, 9.5vw, 54px);
+  }
+  .hero-btn-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    justify-content: center;
+  }
+  .stats-banner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 8px;
+    padding: 24px 16px;
+  }
+  .stat-item {
+    border-right: none;
+  }
+  .stat-item:nth-child(odd) {
+    border-right: 1px solid var(--border-soft);
+  }
+  .animal-cards-grid,
+  .trust-grid,
+  .beparis-grid,
+  .steps-timeline {
+    grid-template-columns: 1fr;
+  }
+  .cta-banner-box {
+    padding: 44px 22px;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group-row {
+    grid-template-columns: 1fr;
+  }
+  .slot-time-grid {
+    grid-template-columns: 1fr;
+  }
+  .full-view-panel {
+    max-height: 96vh;
+  }
+  .animal-details-grid,
+  .beparis-directory-panel,
+  .bepari-catalog-view-panel {
+    padding: 24px 18px;
+  }
 }
 </style>
 </head>
 <body>
 
-<!-- ================= NAV ================= -->
+<!-- ================= NAVIGATION ================= -->
 <div id="nav-wrapper">
-  <nav class="island" aria-label="Main navigation">
-    <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 64 64" fill="none"><path d="M14 20c-3-6 1-11 7-9 2 .8 3 2 5 2h12c2 0 3-1.2 5-2 6-2 10 3 7 9-1.4 2.8-3 4-3 7 0 8-5 12-10 13l-2 6h-4l-2-6c-5-1-10-5-10-13 0-3-1.6-4.2-3-7z" fill="#F5EBDD"/><circle cx="23" cy="26" r="2.4" fill="#3B2314"/><circle cx="41" cy="26" r="2.4" fill="#3B2314"/><path d="M26 38c2 1.6 4 2.4 6 2.4s4-.8 6-2.4" stroke="#D9C6A5" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
-      </span>
-      <span class="brand-name">mandi<span class="tld">.pk</span></span>
+  <nav class="island-header" aria-label="Main navigation">
+    <a class="brand-link" href="#top">
+      <span class="brand-title">mandi<span class="brand-tld">.pk</span></span>
     </a>
-    <div class="nav-links">
-      <a href="#animals">Animals</a>
-      <a href="#beparis">Beparis</a>
-      <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
+
+    <div class="nav-center-menu">
+      <a class="nav-menu-item" href="#animals">Browse animals</a>
+      <a class="nav-menu-item" href="#how">How it works</a>
+      <a class="nav-menu-item" href="beparis.html">For beparis</a>
     </div>
-    <div class="nav-cta-group">
-      <a class="btn-nav-cta" href="#animals">Book a viewing <i class="ph" style="font-style:normal">&rarr;</i></a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+
+    <div class="nav-actions-group">
+      <a class="btn-nav-outline" href="#animals">
+        <span>Explore the catalog</span>
+        <span>&rarr;</span>
+      </a>
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 </div>
 
-<!-- mobile nav -->
-<div class="mobile-nav-overlay" id="mobile-nav" aria-hidden="true">
-  <a href="#animals"><small>Browse</small>Animals</a>
-  <a href="#beparis"><small>Verified sellers</small>Beparis</a>
-  <a href="#how"><small>The process</small>How it works</a>
-  <a href="#pricing"><small>5% &amp; 95% split</small>Pricing</a>
-  <a href="#bepari-cta"><small>Sell with us</small>For beparis</a>
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav-panel" id="mobile-nav" aria-hidden="true">
+  <a href="#animals"><small>Live Market</small>Browse Animals</a>
+  <a href="#how"><small>Trust Model</small>How It Works</a>
+  <a href="beparis.html"><small>Verified Sellers</small>For Beparis</a>
+  <a href="#growth"><small>Year-Round</small>Calf Tracking</a>
 </div>
 
-<!-- ================= HERO ================= -->
-<header class="hero" id="top">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow"><span class="dot"></span> Karachi &bull; Qurbani 2027</span>
-        <h1>Karachi's mandi, <em>minus the doubt.</em></h1>
-        <p class="hero-sub">Browse verified beparis' stock, see what animals actually sell for, and book a 30-minute viewing slot — so you walk into the mandi knowing exactly where to go and what to expect.</p>
-        <div class="hero-actions">
-          <a class="btn-primary" href="#animals">Browse animals <span class="btn-icon">&rarr;</span></a>
-          <a class="btn-ghost" href="#how">How it works</a>
+<!-- ================= HERO STAGE (TEXT FLUSH TO LEFT) ================= -->
+<header class="hero-stage" id="top">
+  <div class="hero-container-left">
+    <div class="hero-copy-box">
+      <span class="hero-eyebrow">KARACHI'S LIVESTOCK MARKETPLACE</span>
+      
+      <h1 class="hero-headline">
+        <span class="hero-brand-name">mandi.pk</span>
+        <span class="hero-line"><em>See the animal.</em></span>
+        <span class="hero-line">Meet the bepari.</span>
+      </h1>
+
+      <p class="hero-subtext">
+        Explore livestock before you visit. Find an animal that feels right, then arrange to see it in person.
+      </p>
+
+      <div class="hero-btn-row">
+        <a class="btn-hero-primary" href="#animals">
+          <span>Browse animals</span>
+          <span>&rarr;</span>
+        </a>
+        <a class="btn-hero-secondary" href="#how">
+          <span>How it works</span>
+        </a>
+      </div>
+
+      <div class="hero-floating-pills">
+        <div class="hero-pill">
+          <span class="pill-dot"></span>
+          <span>Verified Mandi Beparis</span>
+        </div>
+        <div class="hero-pill">
+          <span class="pill-dot"></span>
+          <span>30-min Viewing Slots</span>
+        </div>
+        <div class="hero-pill">
+          <span class="pill-dot"></span>
+          <span>0% Hidden Buyer Surcharges</span>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 260 170" class="bull-hero" preserveAspectRatio="xMidYMax meet" style="position:absolute;inset:auto 0 0 0;width:100%;height:80%">
-            <g fill="#F5EBDD" opacity="0.95">
-              <rect x="70" y="48" width="140" height="60" rx="28"/>
-              <ellipse cx="118" cy="52" rx="42" ry="24"/>
-              <rect x="30" y="34" width="54" height="46" rx="19" transform="rotate(-6 57 57)"/>
-              <ellipse cx="46" cy="82" rx="15" ry="10" fill="#D9C6A5"/>
-            </g>
-            <g fill="#F5EBDD">
-              <rect x="86" y="100" width="11" height="46" rx="5.5"/>
-              <rect x="108" y="104" width="11" height="42" rx="5.5"/>
-              <rect x="150" y="104" width="11" height="42" rx="5.5"/>
-              <rect x="172" y="100" width="11" height="46" rx="5.5"/>
-            </g>
-            <g stroke="#D9C6A5" stroke-width="7" stroke-linecap="round" fill="none">
-              <path d="M40 30 C34 18 22 16 16 24"/>
-              <path d="M74 26 C80 14 92 12 98 20"/>
-            </g>
-            <circle cx="46" cy="56" r="3.4" fill="#3B2314"/>
-            <circle cx="70" cy="53" r="3.4" fill="#3B2314"/>
-            <path d="M210 60 C226 58 234 66 232 80" stroke="#F5EBDD" stroke-width="6" stroke-linecap="round" fill="none"/>
-            <ellipse cx="233" cy="84" rx="7" ry="10" fill="#D9C6A5"/>
-          </svg>
-          <div class="chip chip-verified"><span class="chip-ico">&#10003;</span><span><small>Bepari</small>Haji Abdul Razzaq &bull; Verified</span></div>
-          <div class="chip chip-slot"><span class="chip-ico">&#128337;</span><span><small>Slot booked</small>Today &bull; 7:00 – 7:30 PM</span></div>
-          <div class="chip chip-price"><span class="chip-ico">&#9878;</span><span><small>Market rate</small>Brahman 445kg &bull; PKR 285,000</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-stats reveal">
-      <div class="stat"><div class="stat-num"><span data-count="1240">0</span></div><div class="stat-label">Animals listed</div></div>
-      <div class="stat"><div class="stat-num"><span data-count="34">0</span></div><div class="stat-label">Verified beparis</div></div>
-      <div class="stat"><div class="stat-num"><span data-count="861">0</span></div><div class="stat-label">Slots booked</div></div>
-      <div class="stat"><div class="stat-num"><span data-count="48" data-decimal="1">0</span><span class="unit">/5</span></div><div class="stat-label">Avg bepari rating</div></div>
     </div>
   </div>
 </header>
 
+<!-- ================= WHITE STATS BANNER ================= -->
+<div class="container stats-banner-wrap">
+  <div class="stats-banner">
+    <div class="stat-item">
+      <div class="stat-value"><span data-count="1240">0</span><span class="gold">+</span></div>
+      <div class="stat-desc">Animals Listed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value"><span data-count="34">0</span></div>
+      <div class="stat-desc">Verified Beparis</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value"><span data-count="861">0</span></div>
+      <div class="stat-desc">Slots Booked</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value"><span data-count="49" data-decimal="1">0</span><span class="gold">/5</span></div>
+      <div class="stat-desc">Avg Bepari Rating</div>
+    </div>
+  </div>
+</div>
+
 <main>
-<!-- ================= TRUST ================= -->
+<!-- ================= TRUST PROPOSITION (WHITE THEME) ================= -->
 <section id="trust">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">Why mandi.pk</div>
-      <h2 class="section-heading">Built around the part of the mandi that actually matters.</h2>
-      <p class="section-sub">We don't ask you to buy an animal from a photo. We make the in-person visit efficient — and the seller trustworthy.</p>
+    <div class="section-intro">
+      <div class="section-tag">Why mandi.pk</div>
+      <h2 class="section-title">Built around the part of the mandi that <em>actually matters.</em></h2>
+      <p class="section-subtitle">We never ask you to buy an animal blind from a photo. We streamline the mandi visit — transparent prices, reserved slots, and verified sellers.</p>
     </div>
+
     <div class="trust-grid">
-      <div class="card-outer reveal"><div class="card-inner">
-        <div class="trust-ico brown">&#9670;</div>
+      <div class="trust-card">
+        <div class="trust-icon-box">&#9670;</div>
         <h3>Verified beparis only</h3>
-        <p>Sellers earn a verified badge after real sales with honest 5-star reviews. If a bepari is listed here, the mandi vouches for him — not us asking you to.</p>
-      </div></div>
-      <div class="card-outer reveal reveal-d1"><div class="card-inner">
-        <div class="trust-ico">&#128337;</div>
+        <p>Sellers earn a verified badge through authentic sales volume and genuine 5-star customer reviews. If a seller is listed here, Karachi's mandi community vouches for him.</p>
+      </div>
+
+      <div class="trust-card">
+        <div class="trust-icon-box">&#128337;</div>
         <h3>Booked 30-min viewings</h3>
-        <p>Reserve a slot to see the exact animal you shortlisted. Other buyers get other slots — no more crowds converging on one animal.</p>
-      </div></div>
-      <div class="card-outer reveal reveal-d2"><div class="card-inner">
-        <div class="trust-ico">&#9878;</div>
+        <p>Reserve an exclusive viewing slot for your shortlisted animal. Other buyers get separate windows — no chaotic crowding around the same animal at once.</p>
+      </div>
+
+      <div class="trust-card">
+        <div class="trust-icon-box">&#9878;</div>
         <h3>Real market prices</h3>
-        <p>Browse live listings by breed, weight and price to know a fair rate before you negotiate. You pay exactly the agreed price — nothing hidden on top.</p>
-      </div></div>
+        <p>Browse live listings categorized by breed, live weight, and fair price benchmarks. You pay exactly the price you negotiate — nothing hidden or added on top.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= HOW ================= -->
-<section class="how" id="how">
+<!-- ================= HOW IT WORKS ================= -->
+<section class="how-section" id="how">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">The process</div>
-      <h2 class="section-heading">Four steps. Zero guesswork.</h2>
+    <div class="section-intro">
+      <div class="section-tag">The Process</div>
+      <h2 class="section-title">Four steps. <em>Zero guesswork.</em></h2>
+      <p class="section-subtitle">From browsing on your sofa to inspecting the animal at the mandi gate, every step is designed for trust.</p>
     </div>
-    <div class="steps">
-      <div class="step reveal"><div class="step-num">1</div><h3>Browse the catalog</h3><p>Filter verified beparis' animals by breed, weight, price and gender — with real market rates visible.</p><span class="step-tag">From your phone</span></div>
-      <div class="step reveal reveal-d1"><div class="step-num">2</div><h3>Mark interested</h3><p>Shortlist the animals you want to see. No payment, no order — just a flag that goes to the bepari.</p><span class="step-tag">No commitment</span></div>
-      <div class="step reveal reveal-d2"><div class="step-num">3</div><h3>Book a viewing slot</h3><p>Pick a 30-minute slot to inspect the animal in person at the mandi. Your slot is yours alone.</p><span class="step-tag">30 minutes each</span></div>
-      <div class="step reveal reveal-d3"><div class="step-num">4</div><h3>Meet &amp; negotiate</h3><p>Negotiate face to face as it should be. The bepari confirms the deal on mandi.pk — total stays exactly the agreed price.</p><span class="step-tag">Price = price</span></div>
+
+    <div class="steps-timeline">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <h3>Browse the catalog</h3>
+        <p>Filter verified stock by breed, weight, price, and mandi location with authentic daylight photography.</p>
+        <span class="step-tag">From your phone</span>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <h3>Mark interested</h3>
+        <p>Shortlist candidates you want to inspect. No prepayment, no commitment — just an instant alert to the bepari.</p>
+        <span class="step-tag">Zero commitment</span>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <h3>Book a viewing slot</h3>
+        <p>Lock in a 30-minute window. When you arrive at the mandi, the animal is ready and waiting for your inspection.</p>
+        <span class="step-tag">30 mins reserved</span>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">04</div>
+        <h3>Inspect &amp; negotiate</h3>
+        <p>Negotiate face to face. The bepari confirms the agreed price in his dashboard — the total is always your negotiated rate.</p>
+        <span class="step-tag">Negotiate direct</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= ANIMALS ================= -->
-<section id="animals">
+<!-- ================= LIVE CATALOG WITH BESPOKE MANDI DOSSIER CARDS ================= -->
+<section class="catalog-section" id="animals">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">Live catalog</div>
-      <h2 class="section-heading">This week's featured animals</h2>
-      <p class="section-sub">Dummy listings for the demo — every card shows the bepari, weight and market rate. Mark interested to see one in person.</p>
+    <div class="section-intro">
+      <div class="section-tag">Karachi Live Catalog</div>
+      <h2 class="section-title">Verified livestock <em>in stock today.</em></h2>
+      <p class="section-subtitle">Real daylight photos from Super Highway Mandi, Malir Cattle Colony, and Bhains Colony. Click any animal to open its full dossier and reserve a viewing slot.</p>
     </div>
-    <div class="animal-filters reveal">
-      <div class="filter-row"><span class="filter-label">Breed</span><div id="breed-chips" class="filter-chips"></div></div>
-      <div class="filter-row"><span class="filter-label">Gender</span><div id="gender-chips" class="filter-chips"></div></div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar-wrap">
+      <div class="filter-row-flex">
+        <span class="filter-label-title">Breed:</span>
+        <div class="filter-chips-list" id="breed-chips"></div>
+      </div>
+      <div class="filter-row-flex">
+        <span class="filter-label-title">Gender:</span>
+        <div class="filter-chips-list" id="gender-chips"></div>
+      </div>
     </div>
-    <div class="animal-grid" id="animal-grid"></div>
-    <p class="empty-filter" id="empty-filter">No animals match that combination right now — try clearing a filter.</p>
+
+    <!-- Animal Dossier Grid -->
+    <div class="animal-cards-grid" id="animal-grid"></div>
+
+    <!-- Empty State -->
+    <div class="catalog-empty-state" id="empty-filter">
+      <p>No animals match that combination right now. Try switching to "All Breeds" or clearing filters.</p>
+    </div>
   </div>
 </section>
 
-<!-- ================= BEPARIS ================= -->
-<section id="beparis" style="background:var(--paper)">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">The sellers</div>
-      <h2 class="section-heading">Verified beparis of Karachi</h2>
-      <p class="section-sub">Ratings and sales history are public. The verified badge is earned — real sales, honest reviews, accurate stock.</p>
-    </div>
-    <div class="bepari-strip" id="bepari-strip"></div>
-  </div>
-</section>
 
-<!-- ================= PRICING ================= -->
-<section id="pricing">
+
+<!-- ================= VERIFIED BEPARIS SECTION ================= -->
+<section class="beparis-section" id="beparis">
   <div class="container">
-    <div class="pricing-band reveal">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:52px; flex-wrap:wrap; gap:20px;">
+      <div class="section-intro" style="margin-bottom:0;">
+        <div class="section-tag">Verified Mandi Network</div>
+        <h2 class="section-title">Meet Karachi's <em>trusted beparis.</em></h2>
+        <p class="section-subtitle">Every seller vetted for accurate weights, daylight photography, and customer reviews. Click any bepari to browse their personal stock.</p>
+      </div>
       <div>
-        <div class="section-eyebrow">Transparent split</div>
-        <h2 class="section-heading" style="margin-bottom:18px">You pay the price. That's it.</h2>
-        <p class="section-sub" style="margin-top:0">mandi.pk takes a 5% commission — from the seller side of the ledger, collected weekly — and never adds a rupee to your bill. What you negotiate is what you pay, split between the bepari and the platform.</p>
+        <a href="beparis.html" class="btn-dossier-book" id="btn-view-all-beparis" style="display:inline-flex; padding:12px 22px; font-size:13.5px; text-decoration:none;">
+          <span>View All Karachi Beparis</span>
+          <span class="book-arrow">&rarr;</span>
+        </a>
       </div>
-      <div class="split-card">
-        <div class="split-total"><b>PKR 250,000</b><span>Agreed price</span></div>
-        <div class="split-row">
-          <div class="who"><b>To the bepari</b><span>Direct — online or cash, your choice</span></div>
-          <div class="amt">PKR 237,500<small>95%</small></div>
+    </div>
+
+    <div class="beparis-grid" id="bepari-strip"></div>
+  </div>
+</section>
+
+<!-- ================= YEAR-ROUND CALF TRACKING ================= -->
+<section class="growth-section" id="growth">
+  <div class="container">
+    <div class="growth-feature-box">
+      <div>
+        <div class="section-tag">Year-Round Marketplace</div>
+        <h2 class="section-title">Buy a young calf. <em>Track its growth until Eid.</em></h2>
+        <p class="section-subtitle">
+          mandi.pk isn't just an Eid week tool. Buy a promising calf early at off-season rates and follow its monthly weight gain, vaccination milestones, and dietary progress with verified bepari updates.
+        </p>
+        <div style="margin-top: 28px;">
+          <a class="btn-dossier-book" href="#animals" style="display:inline-flex; padding:13px 24px;">
+            <span>Browse Available Calves</span>
+            <span class="book-arrow">&rarr;</span>
+          </a>
         </div>
-        <div class="split-row">
-          <div class="who"><b>To mandi.pk</b><span>Platform commission</span></div>
-          <div class="amt">PKR 12,500<small>5%</small></div>
+      </div>
+
+      <div class="growth-preview-card">
+        <div class="growth-card-top-header">
+          <div>
+            <h4 style="font-family:var(--font-serif); font-size:21px; color:var(--ink-primary);">Sahiwal Calf #C-19</h4>
+            <p style="font-size:13px; color:var(--ink-muted);">Purchased by Daniyal K. &bull; Bhains Colony</p>
+          </div>
+          <span class="growth-badge">Month 9 Update</span>
         </div>
-        <div class="split-note">Worked example on a PKR 250,000 animal. Total is always exactly the negotiated price.</div>
+
+        <div class="growth-timeline-events">
+          <div class="growth-event-item">
+            <span class="event-bullet"></span>
+            <div>
+              <div class="event-title">Current Weight: 152 kg (+18 kg this month)</div>
+              <div class="event-sub">High-protein Khal &amp; fresh green fodder regimen</div>
+            </div>
+          </div>
+          <div class="growth-event-item">
+            <span class="event-bullet"></span>
+            <div>
+              <div class="event-title">FMD &amp; Deworming Administered</div>
+              <div class="event-sub">Verified by Dr. Tariq (Karachi Veterinary Board)</div>
+            </div>
+          </div>
+          <div class="growth-event-item">
+            <span class="event-bullet"></span>
+            <div>
+              <div class="event-title">Next Daylight Video Scheduled</div>
+              <div class="event-sub">Oct 15 &bull; Automatic WhatsApp reminder sent to bepari</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= BEPARI CTA ================= -->
-<section id="bepari-cta" style="padding-top:0">
-  <div class="container">
-    <div class="cta-band reveal">
-      <h2>Are you a bepari?</h2>
-      <p>List your stock on mandi.pk, meet serious buyers who've already seen the price and booked a slot — and stop haggling with crowds.</p>
-      <a class="btn-primary" href="#top">List your stock <span class="btn-icon">&rarr;</span></a>
-    </div>
+<!-- ================= BEPARI ONBOARDING CTA ================= -->
+<div class="container cta-banner-section" id="for-beparis">
+  <div class="cta-banner-box">
+    <h2>Are you a mandi bepari?</h2>
+    <p>
+      Join Karachi's verified livestock network. List your stock, receive serious buyers with pre-booked slots, and sell your animals without crowd haggling.
+    </p>
+    <a class="btn-hero-primary" href="#top" style="display:inline-flex;">
+      <span>Apply for Seller Verification</span>
+      <span>&rarr;</span>
+    </a>
   </div>
-</section>
+</div>
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer>
+<footer class="mandi-footer">
   <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a class="brand" href="#top" style="display:inline-flex">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 64 64" fill="none"><path d="M14 20c-3-6 1-11 7-9 2 .8 3 2 5 2h12c2 0 3-1.2 5-2 6-2 10 3 7 9-1.4 2.8-3 4-3 7 0 8-5 12-10 13l-2 6h-4l-2-6c-5-1-10-5-10-13 0-3-1.6-4.2-3-7z" fill="#F5EBDD"/><circle cx="23" cy="26" r="2.4" fill="#3B2314"/><circle cx="41" cy="26" r="2.4" fill="#3B2314"/><path d="M26 38c2 1.6 4 2.4 6 2.4s4-.8 6-2.4" stroke="#D9C6A5" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
-          </span>
-          <span class="brand-name">mandi<span class="tld">.pk</span></span>
-        </a>
-        <p>Karachi's trust-first livestock marketplace. Verified beparis, booked viewings, transparent prices — see it in person, then decide.</p>
+    <div class="footer-top-grid">
+      <div class="footer-brand-col">
+        <div class="brand-title">mandi<span class="brand-tld">.pk</span></div>
+        <p>
+          Karachi's trust-first livestock marketplace. Verified beparis, booked viewing slots, and transparent mandi market rates.
+        </p>
+        <p style="margin-top:12px; font-family:var(--font-mono); font-size:11.5px; color:rgba(255,255,255,0.45);">
+          Karachi Super Highway &bull; Bhains Colony &bull; Malir Cattle Colony
+        </p>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <a href="#animals">Featured animals</a>
-        <a href="#beparis">Verified beparis</a>
-        <a href="#how">How it works</a>
-        <a href="#pricing">Pricing split</a>
+
+      <div class="footer-nav-col">
+        <h4>Catalog</h4>
+        <a href="#animals">Brahman Bulls</a>
+        <a href="#animals">Sahiwal Stock</a>
+        <a href="#animals">Cholistani</a>
+        <a href="#animals">Young Calves</a>
       </div>
-      <div class="footer-col">
-        <h4>For beparis</h4>
-        <a href="#bepari-cta">Join as a bepari</a>
-        <a href="#bepari-cta">Verification &amp; badges</a>
-        <a href="#bepari-cta">Bepari dashboard</a>
+
+      <div class="footer-nav-col">
+        <h4>Trust &amp; Platform</h4>
+        <a href="#how">How It Works</a>
+        <a href="beparis.html">Verified Beparis</a>
+        <a href="#animals">Live Animal Catalog</a>
+        <a href="#growth">Calf Growth Tracking</a>
       </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="#top">About mandi.pk</a>
-        <a href="#top">Terms of use</a>
-        <a href="#top">Privacy policy</a>
-        <a href="#top">Contact</a>
+
+      <div class="footer-nav-col">
+        <h4>For Sellers</h4>
+        <a href="beparis.html">Join as a Bepari</a>
+        <a href="beparis.html">Verification Criteria</a>
+        <a href="beparis.html">Seller Directory</a>
+        <a href="#top">Back to Top &uarr;</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 mandi.pk — Karachi, Pakistan</span>
-      <span>Built for Imaginathon &bull; See it in person, then decide.</span>
+
+    <div class="footer-bottom-row">
+      <span>&copy; 2026 mandi.pk — Built for Imaginathon Karachi. All rights reserved.</span>
+      <span>See the animal in person. Meet the bepari.</span>
     </div>
   </div>
 </footer>
 
-<!-- ================= INTERESTED MODAL ================= -->
-<div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close" id="modal-close" aria-label="Close">&#10005;</button>
-    <div class="modal-eyebrow">Marked interested</div>
-    <h3 id="modal-title">Message the bepari</h3>
-    <p class="modal-sub">No payment and no order here — you negotiate in person. Send the animal's photo and details straight to the bepari.</p>
-    <div class="bepari-line" id="modal-bepari"></div>
-    <div class="msg-preview" id="modal-msg"></div>
-    <a class="btn-whatsapp" id="modal-wa" href="#" target="_blank" rel="noopener">Send on WhatsApp &rarr;</a>
-    <p class="modal-note">Then book your 30-minute viewing slot on the animal's page.</p>
-  </div>
-</div>
+
 
 <script src="js/mock-data.js"></script>
 <script src="js/supabase.js"></script>
 <script src="js/api.js"></script>
 <script>
 'use strict';
-/** mandi.pk — home page logic */
-const MPKPage = {
-  animals: [], beparis: [],
+
+/**
+ * mandi.pk — Core Application Controller
+ */
+const MandiApp = {
+  animals: [],
+  beparis: [],
   filters: { breed: 'All', gender: 'All' },
+  selectedAnimal: null,
+  selectedSlotDay: 'Today',
+  selectedSlotTime: '5:00 PM – 5:30 PM',
+  activeBepari: null,
+
+  breedImages: {
+    'Brahman': 'assets/breed-brahman.jpg',
+    'Cholistani': 'assets/breed-cholistani.jpg',
+    'Sahiwal': 'assets/breed-sahiwal.jpg',
+    'Kankrej': 'assets/breed-kankrej.jpg',
+    'Tharparkar': 'assets/breed-tharparkar.jpg',
+    'Dajjal': 'assets/breed-dajjal.jpg'
+  },
 
   init() {
     this.bindNav();
-    this.bindReveal();
-    this.bindCounters();
-    this.bindModal();
-    this.load();
+    this.bindStats();
+    this.loadData();
   },
 
-  /* ---------- nav ---------- */
+  /* ---------- Nav Scroll & Mobile Drawer ---------- */
   bindNav() {
-    const wrapper = document.getElementById('nav-wrapper');
-    const onScroll = () => wrapper.classList.toggle('scrolled', window.scrollY > 24);
+    const navWrapper = document.getElementById('nav-wrapper');
+    const onScroll = () => {
+      navWrapper.classList.toggle('scrolled', window.scrollY > 30);
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    const burger = document.getElementById('hamburger');
-    const overlay = document.getElementById('mobile-nav');
-    const closeNav = () => {
-      burger.classList.remove('open');
-      overlay.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    };
-    burger.addEventListener('click', () => {
-      const open = !burger.classList.contains('open');
+    const burger = document.getElementById('hamburger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    const toggleNav = (open) => {
       burger.classList.toggle('open', open);
-      overlay.classList.toggle('open', open);
-      burger.setAttribute('aria-expanded', String(open));
-      overlay.setAttribute('aria-hidden', String(!open));
+      mobileNav.classList.toggle('open', open);
       document.body.style.overflow = open ? 'hidden' : '';
+    };
+
+    burger.addEventListener('click', () => {
+      toggleNav(!burger.classList.contains('open'));
     });
-    overlay.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeNav));
+
+    mobileNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => toggleNav(false));
+    });
   },
 
-  /* ---------- reveal on scroll ---------- */
-  bindReveal() {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-  },
-
-  /* ---------- stat count-up ---------- */
-  bindCounters() {
-    const ease = (t) => 1 - Math.pow(1 - t, 3);
-    const io = new IntersectionObserver((entries) => {
+  /* ---------- Counter Animation ---------- */
+  bindStats() {
+    const easeOutQuad = (t) => t * (2 - t);
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        io.unobserve(entry.target);
-        entry.target.querySelectorAll('[data-count]').forEach((el) => {
-          const target = Number(el.dataset.count);
-          const decimal = el.dataset.decimal === '1';
-          const start = performance.now(), dur = 1400;
-          const tick = (now) => {
-            const p = Math.min((now - start) / dur, 1);
-            const val = target * ease(p);
-            el.textContent = decimal ? (val / 10).toFixed(1) : Math.round(val).toLocaleString('en-PK');
-            if (p < 1) requestAnimationFrame(tick);
+        observer.unobserve(entry.target);
+
+        entry.target.querySelectorAll('[data-count]').forEach((counter) => {
+          const target = Number(counter.dataset.count);
+          const isDecimal = counter.dataset.decimal === '1';
+          const duration = 1400;
+          const start = performance.now();
+
+          const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const val = target * easeOutQuad(progress);
+            counter.textContent = isDecimal
+              ? (val / 10).toFixed(1)
+              : Math.round(val).toLocaleString('en-PK');
+            if (progress < 1) requestAnimationFrame(step);
           };
-          requestAnimationFrame(tick);
+          requestAnimationFrame(step);
         });
       });
-    }, { threshold: 0.4 });
-    document.querySelectorAll('.hero-stats').forEach((el) => io.observe(el));
+    }, { threshold: 0.3 });
+
+    const banner = document.querySelector('.stats-banner');
+    if (banner) observer.observe(banner);
   },
 
-  /* ---------- data ---------- */
-  async load() {
+
+
+  /* ---------- Data Layer Loading ---------- */
+  async loadData() {
     try {
       const [animals, beparis] = await Promise.all([
-        MPK.api.getFeaturedAnimals(12),
+        MPK.api.getFeaturedAnimals(18),
         MPK.api.getBeparis()
       ]);
       this.animals = animals;
       this.beparis = beparis;
-      this.renderBreedChips();
-      this.renderAnimals();
-      this.renderBeparis();
+
+      this.renderBreedFilterChips();
+      this.renderAnimalsCatalog();
+      this.renderBeparisShowcase();
     } catch (err) {
-      console.warn('[MPK] failed to render listings:', err);
+      console.warn('[mandi.pk] Data load fallback:', err);
     }
   },
 
-  bepariById(id) { return this.beparis.find((b) => b.id === id); },
+  getBepari(id) {
+    return this.beparis.find((b) => b.id === id) || null;
+  },
+
+  getAnimalPhoto(animal) {
+    if (animal.is_calf) return 'assets/breed-calf.jpg';
+    return this.breedImages[animal.breed] || 'assets/breed-sahiwal.jpg';
+  },
+
+  fmtPKR(amount) {
+    return 'PKR ' + Number(amount).toLocaleString('en-PK');
+  },
 
   initials(name) {
-    return name.replace(/^(Haji|Seth|Bhai|Gul|Dost)\s+/i, '').split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase();
+    return name.replace(/^(Haji|Seth|Bhai|Karim|Dost|Gul|Eisa)\s+/i, '').split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase();
   },
 
-  fmtPKR(n) { return 'PKR ' + Number(n).toLocaleString('en-PK'); },
+  /* ---------- Render Filter Chips ---------- */
+  renderBreedFilterChips() {
+    const uniqueBreeds = ['All', ...new Set(this.animals.map((a) => a.breed))];
+    const container = document.getElementById('breed-chips');
 
-  /* ---------- animal grid ---------- */
-  renderBreedChips() {
-    const breeds = ['All', ...new Set(this.animals.map((a) => a.breed))];
-    const row = document.getElementById('breed-chips');
-    row.innerHTML = breeds.map((b) =>
-      `<button class="fchip${b === 'All' ? ' active' : ''}" data-breed="${b}">${b}</button>`).join('');
-    row.querySelectorAll('.fchip').forEach((chip) => chip.addEventListener('click', () => {
-      this.filters.breed = chip.dataset.breed;
-      row.querySelectorAll('.fchip').forEach((c) => c.classList.toggle('active', c === chip));
-      this.applyFilters();
-    }));
+    container.innerHTML = uniqueBreeds.map((breed) => `
+      <button class="filter-pill${breed === 'All' ? ' active' : ''}" data-breed="${breed}">
+        ${breed}
+      </button>
+    `).join('');
 
-    const grow = document.getElementById('gender-chips');
-    ['All', 'male', 'female'].forEach((g, i) => {
-      const chip = document.createElement('button');
-      chip.className = 'fchip' + (i === 0 ? ' active' : '');
-      chip.dataset.gender = g;
-      chip.textContent = i === 0 ? 'All' : (g === 'male' ? 'Male' : 'Female');
-      chip.addEventListener('click', () => {
-        this.filters.gender = g;
-        grow.querySelectorAll('.fchip').forEach((c) => c.classList.toggle('active', c === chip));
-        this.applyFilters();
+    container.querySelectorAll('.filter-pill').forEach((pill) => {
+      pill.addEventListener('click', () => {
+        this.filters.breed = pill.dataset.breed;
+        container.querySelectorAll('.filter-pill').forEach((p) => p.classList.toggle('active', p === pill));
+        this.applyCatalogFilters();
       });
-      grow.appendChild(chip);
+    });
+
+    const genderContainer = document.getElementById('gender-chips');
+    const genders = ['All', 'male', 'female'];
+    genderContainer.innerHTML = genders.map((g, idx) => `
+      <button class="filter-pill${idx === 0 ? ' active' : ''}" data-gender="${g}">
+        ${g === 'All' ? 'All' : (g === 'male' ? 'Male (Bulls)' : 'Female (Cows)')}
+      </button>
+    `).join('');
+
+    genderContainer.querySelectorAll('.filter-pill').forEach((pill) => {
+      pill.addEventListener('click', () => {
+        this.filters.gender = pill.dataset.gender;
+        genderContainer.querySelectorAll('.filter-pill').forEach((p) => p.classList.toggle('active', p === pill));
+        this.applyCatalogFilters();
+      });
     });
   },
 
-  renderAnimals() {
+  /* ---------- Render Bespoke Mandi Dossier Cards ---------- */
+  renderAnimalsCatalog() {
     const grid = document.getElementById('animal-grid');
-    grid.innerHTML = this.animals.map((a) => {
-      const bp = this.bepariById(a.bepari_id);
-      const bpName = bp ? bp.name : 'Bepari';
-      const verified = bp && bp.verified;
+
+    grid.innerHTML = this.animals.map((animal) => {
+      const bepari = this.getBepari(animal.bepari_id);
+      const bepariName = bepari ? bepari.name : 'Verified Bepari';
+      const mandiArea = bepari ? bepari.area : 'Karachi Mandi';
+      const isVerified = bepari ? bepari.verified : false;
+      const photoUrl = this.getAnimalPhoto(animal);
+      const lotNumber = 'LOT #PK-' + animal.id.replace('an-', '').padStart(2, '0');
+      const teethText = animal.is_calf ? 'Kheer (Calf)' : '2 Daant';
+
       return `
-      <article class="animal-card" data-breed="${a.breed}" data-gender="${a.gender}">
-        <div class="animal-art tint-${a.tint || 'brown'}">
-          ${verified ? '<span class="badge-verified">&#10003; Verified</span>' : ''}
-          ${a.is_calf ? '<span class="badge-calf">Calf</span>' : ''}
-          <div class="art-bg"></div>
-          <svg class="bull" viewBox="0 0 260 170" aria-hidden="true">
-            <g>
-              <rect x="70" y="48" width="140" height="60" rx="28"/>
-              <ellipse cx="118" cy="52" rx="42" ry="24"/>
-              <rect x="30" y="34" width="54" height="46" rx="19" transform="rotate(-6 57 57)"/>
-              <ellipse cx="46" cy="82" rx="15" ry="10" fill="rgba(59,35,20,0.8)"/>
-              <rect x="86" y="100" width="11" height="46" rx="5.5"/>
-              <rect x="108" y="104" width="11" height="42" rx="5.5"/>
-              <rect x="150" y="104" width="11" height="42" rx="5.5"/>
-              <rect x="172" y="100" width="11" height="46" rx="5.5"/>
-            </g>
-            <g stroke="rgba(59,35,20,0.85)" stroke-width="7" stroke-linecap="round" fill="none">
-              <path d="M40 30 C34 18 22 16 16 24"/><path d="M74 26 C80 14 92 12 98 20"/>
-            </g>
-          </svg>
+      <article class="animal-dossier-card" data-id="${animal.id}" data-breed="${animal.breed}" data-gender="${animal.gender}">
+        <!-- Archival Lot Header -->
+        <div class="dossier-lot-strip">
+          <span class="dossier-lot-code">${lotNumber}</span>
+          <span class="dossier-status-pill">Available</span>
         </div>
-        <div class="animal-body">
-          <div class="animal-top">
-            <span class="animal-breed">${a.breed}</span>
-            <span class="animal-gender">${a.gender}</span>
+
+        <!-- Photograph Chamber with Ear Tag Plaque -->
+        <div class="dossier-photo-wrap">
+          <img src="${photoUrl}" alt="${animal.breed} for Qurbani in Karachi" loading="lazy">
+          <div class="dossier-ear-tag">
+            <span class="gold-seal">&#9670;</span>
+            <span>TAG #${animal.id.replace('an-','')} &bull; ${teethText}</span>
           </div>
-          <div class="animal-meta">
-            <span><i>&#9878;</i> ${a.weight_kg} kg</span>
-            <span><i>&#9203;</i> ${a.age_months} mo</span>
+          <span class="dossier-top-badge">&#10003; Mandi Checked</span>
+        </div>
+
+        <!-- Dossier Content -->
+        <div class="dossier-content">
+          <div class="dossier-headline-row">
+            <h3 class="dossier-breed-title">${animal.breed}</h3>
+            <span class="dossier-gender-badge">${animal.gender === 'male' ? 'Bull' : 'Cow'}</span>
           </div>
-          <div class="animal-bepari">By <b>${bpName}</b>${verified ? ' <span class="mini-verified">&#10003;</span>' : ''} &bull; ${bp ? bp.area : 'Karachi mandi'}</div>
-          <div class="animal-bottom">
-            <div class="animal-price"><small>Market rate</small>${this.fmtPKR(a.listed_price)}</div>
-            <button class="btn-interested" data-animal="${a.id}">Interested &rarr;</button>
+
+          <div class="dossier-origin-subtitle">
+            ${mandiArea} &bull; ${animal.is_calf ? 'Young Calf' : 'Qurbani Ready'}
+          </div>
+
+          <!-- Structured 3-Column Spec Matrix -->
+          <div class="dossier-spec-matrix">
+            <div class="dossier-spec-col">
+              <span class="dossier-spec-k">WEIGHT</span>
+              <span class="dossier-spec-v">${animal.weight_kg} kg</span>
+            </div>
+            <div class="dossier-spec-col">
+              <span class="dossier-spec-k">AGE</span>
+              <span class="dossier-spec-v">${animal.age_months} mo</span>
+            </div>
+            <div class="dossier-spec-col">
+              <span class="dossier-spec-k">TEETH</span>
+              <span class="dossier-spec-v">${teethText}</span>
+            </div>
+          </div>
+
+          <!-- Bepari Credibility Line -->
+          <div class="dossier-seller-row">
+            <div class="dossier-seller-name">
+              <span>By <strong>${bepariName}</strong></span>
+              ${isVerified ? '<span class="blue-tick" title="Verified Mandi Seller">&#10003;</span>' : ''}
+            </div>
+            <span class="dossier-seller-rating">★ ${bepari ? bepari.rating_avg.toFixed(1) : '4.8'}</span>
+          </div>
+
+          <!-- Price & Booking Plate -->
+          <div class="dossier-action-plate">
+            <div class="dossier-price-stack">
+              <span class="dossier-price-tag-sub">Agreed Mandi Rate</span>
+              <span class="dossier-price-num">${this.fmtPKR(animal.listed_price)}</span>
+            </div>
+            <button class="btn-dossier-book">
+              <span>Reserve 30m Slot</span>
+              <span class="book-arrow">&rarr;</span>
+            </button>
           </div>
         </div>
-      </article>`;
+      </article>
+      `;
     }).join('');
-    grid.querySelectorAll('.btn-interested').forEach((btn) =>
-      btn.addEventListener('click', () => this.openModal(btn.dataset.animal)));
-  },
 
-  applyFilters() {
-    const { breed, gender } = this.filters;
-    let visible = 0;
-    document.querySelectorAll('.animal-card').forEach((card) => {
-      const ok = (breed === 'All' || card.dataset.breed === breed) &&
-                 (gender === 'All' || card.dataset.gender === gender);
-      card.classList.toggle('hidden', !ok);
-      if (ok) visible++;
+    grid.querySelectorAll('.animal-dossier-card').forEach((card) => {
+      card.addEventListener('click', () => {
+        window.location.href = `animal.html?id=${card.dataset.id}`;
+      });
     });
-    document.getElementById('empty-filter').classList.toggle('show', visible === 0);
   },
 
-  /* ---------- bepari strip ---------- */
-  renderBeparis() {
-    const strip = document.getElementById('bepari-strip');
-    const featured = this.beparis.filter((b) => b.verified).slice(0, 3);
-    strip.innerHTML = featured.map((b) => `
-      <div class="bepari-card">
-        <div class="bepari-head">
-          <div class="bepari-avatar">${this.initials(b.name)}${b.verified ? '<span class="vdot" title="Verified">&#10003;</span>' : ''}</div>
+  applyCatalogFilters() {
+    const { breed, gender } = this.filters;
+    let matchCount = 0;
+
+    document.querySelectorAll('#animal-grid .animal-dossier-card').forEach((card) => {
+      const matchBreed = (breed === 'All' || card.dataset.breed === breed);
+      const matchGender = (gender === 'All' || card.dataset.gender === gender);
+      const isVisible = matchBreed && matchGender;
+
+      card.classList.toggle('hidden', !isVisible);
+      if (isVisible) matchCount++;
+    });
+
+    document.getElementById('empty-filter').classList.toggle('show', matchCount === 0);
+  },
+
+  /* ---------- Render Beparis Showcase on Homepage ---------- */
+  renderBeparisShowcase() {
+    const container = document.getElementById('bepari-strip');
+    const featuredSellers = this.beparis.slice(0, 3);
+
+    container.innerHTML = featuredSellers.map((seller) => {
+      return `
+      <div class="bepari-profile-card" data-bepari-id="${seller.id}">
+        <div class="bepari-card-top">
+          <div class="bepari-avatar-monogram">${this.initials(seller.name)}</div>
           <div>
-            <h3>${b.name}</h3>
-            <div class="area">${b.area} &bull; since ${b.since}</div>
-            <div class="stars" style="margin-top:4px">&#9733; ${b.rating_avg.toFixed(1)} <span class="cnt">/ 5</span></div>
+            <h3 class="bepari-title-h3">
+              ${seller.name}
+              ${seller.verified ? '<span class="blue-tick" title="Verified Mandi Seller">&#10003;</span>' : ''}
+            </h3>
+            <div class="bepari-meta-sub">${seller.area} &bull; Since ${seller.since}</div>
+            <div class="bepari-rating-star-row">&#9733; ${seller.rating_avg.toFixed(1)} / 5</div>
           </div>
         </div>
-        <div class="bepari-stats">
-          <div class="bstat"><b>${b.animals_in_stock}</b><span>In stock</span></div>
-          <div class="bstat"><b>${b.animals_sold}</b><span>Sold</span></div>
-          <div class="bstat"><b>${b.verified ? '&#10003;' : '&#8212;'}</b><span>Verified</span></div>
+
+        <div class="bepari-numbers-row">
+          <div class="bepari-num-item">
+            <strong>${seller.animals_sold}</strong>
+            <span>Sold</span>
+          </div>
+          <div class="bepari-num-item">
+            <strong>${seller.animals_in_stock}</strong>
+            <span>In Stock</span>
+          </div>
+          <div class="bepari-num-item">
+            <strong style="color:var(--brand-brown);">${seller.verified ? 'Verified' : 'Member'}</strong>
+            <span>Status</span>
+          </div>
         </div>
-        <a class="bepari-link" href="#animals">View catalog <span>&rarr;</span></a>
-      </div>`).join('');
-  },
 
-  /* ---------- interested modal ---------- */
-  bindModal() {
-    const backdrop = document.getElementById('modal-backdrop');
-    const close = () => {
-      backdrop.classList.remove('open');
-      backdrop.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    };
-    document.getElementById('modal-close').addEventListener('click', close);
-    backdrop.addEventListener('click', (e) => { if (e.target === backdrop) close(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
-  },
+        <div class="bepari-view-catalog-link">
+          <span>View Animals Catalogue</span>
+          <span>&rarr;</span>
+        </div>
+      </div>
+      `;
+    }).join('');
 
-  openModal(animalId) {
-    const animal = this.animals.find((a) => a.id === animalId);
-    if (!animal) return;
-    const bp = this.bepariById(animal.bepari_id) || { name: 'Bepari', phone: '', area: 'Karachi mandi' };
-    document.getElementById('modal-bepari').innerHTML = `
-      <div class="bepari-avatar">${this.initials(bp.name)}</div>
-      <div><b>${bp.name}</b><span>${bp.area} &bull; ${bp.phone || 'phone on listing'}</span></div>`;
-    const msg = `Assalam-o-Alaikum, I saw the ${animal.breed} (${animal.gender}, ${animal.weight_kg} kg, ${this.fmtPKR(animal.listed_price)}) you listed on mandi.pk. I'm interested in seeing it — is it still available?`;
-    document.getElementById('modal-msg').textContent = msg;
-    const waNumber = (bp.phone || '').replace(/[^0-9]/g, '').replace(/^0/, '92');
-    document.getElementById('modal-wa').href = waNumber
-      ? `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`
-      : '#top';
-    const backdrop = document.getElementById('modal-backdrop');
-    backdrop.classList.add('open');
-    backdrop.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+    container.querySelectorAll('.bepari-profile-card').forEach((card) => {
+      card.addEventListener('click', () => {
+        window.location.href = `bepari.html?id=${card.dataset.bepariId}`;
+      });
+    });
   }
 };
 
-document.addEventListener('DOMContentLoaded', () => MPKPage.init());
+document.addEventListener('DOMContentLoaded', () => MandiApp.init());
 </script>
 </body>
 </html>

@@ -1,6 +1,11 @@
 # local preview artifacts
 .shots/
 node_modules/
+.zcode/
+
+# Root screenshots and test artifacts
+/*.png
+!assets/**
 
 # os junk
 .DS_Store

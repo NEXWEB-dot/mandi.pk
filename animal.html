@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animal Details &amp; Viewing Slot Booking — mandi.pk</title>
+<meta name="description" content="View verified animal details, live weight, teeth inspection, and reserve an exclusive 30-minute in-person viewing slot at Karachi mandi.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --bg-white: #ffffff;
+  --bg-cream: #faf7f2;
+  --bg-sand: #f5eee4;
+  --bg-sand-light: #fbf9f5;
+  --border-light: #e6dac6;
+  --border-subtle: #efe8dc;
+
+  --ink-primary: #1b120c;
+  --ink-secondary: #4a3628;
+  --ink-muted: #786555;
+  --ink-light: #a49385;
+
+  --brand-brown-dark: #32190b;
+  --brand-brown: #4e2b15;
+  --brand-brown-mid: #683c1e;
+  --brand-brown-light: #a37248;
+  --brand-tan: #d4b488;
+  --brand-tan-soft: #f4ece0;
+  --brand-tan-border: #e6dac6;
+
+  --accent-gold: #c09148;
+  --accent-blue-tick: #1d9bf0;
+  --accent-green: #1faa53;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --shadow-subtle: 0 4px 20px rgba(78,43,21,0.06);
+  --shadow-card: 0 8px 30px rgba(78,43,21,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg-cream);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Top Navbar ---------- */
+.site-nav {
+  background: var(--brand-brown-dark);
+  color: #fff;
+  border-bottom: 1px solid rgba(212,180,136,0.18);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-brand-logo {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav-brand-logo .tld {
+  color: var(--accent-gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color .2s;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-cta {
+  background: var(--accent-gold);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background .2s;
+}
+
+.nav-cta:hover {
+  background: #b0823b;
+}
+
+/* ---------- Breadcrumbs ---------- */
+.breadcrumb-bar {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 14px 0;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.breadcrumb-list a {
+  color: var(--ink-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb-list a:hover {
+  color: var(--brand-brown);
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  color: var(--ink-light);
+}
+
+.breadcrumb-current {
+  color: var(--brand-brown);
+  font-weight: 600;
+}
+
+/* ---------- Main Layout ---------- */
+.detail-layout {
+  padding: 36px 0 60px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ---------- Left Column: Visual & Specs ---------- */
+.detail-visual-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+}
+
+.detail-photo-chamber {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  background: #ebdcc8;
+  overflow: hidden;
+}
+
+.detail-photo-chamber img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-tag-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(14, 9, 6, 0.9);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(6px);
+}
+
+.photo-verified-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #fff;
+  color: var(--brand-brown);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.detail-specs-container {
+  padding: 24px;
+}
+
+.specs-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 12px;
+}
+
+/* 4-Column Spec Matrix */
+.spec-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .spec-matrix-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.spec-matrix-cell {
+  background: var(--bg-cream);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.spec-k {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.spec-v {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brand-brown);
+}
+
+/* Mandi Assurance List */
+.assurance-list {
+  background: var(--bg-sand-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.assurance-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink-secondary);
+}
+
+.assurance-icon {
+  color: var(--accent-green);
+  font-weight: bold;
+}
+
+/* ---------- Right Column: Booking & Details ---------- */
+.detail-info-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  box-shadow: var(--shadow-subtle);
+}
+
+@media (max-width: 600px) {
+  .detail-info-card {
+    padding: 24px 20px;
+  }
+}
+
+.lot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.lot-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.avail-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+}
+
+.avail-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-green);
+}
+
+.animal-title {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.15;
+  margin-bottom: 6px;
+  letter-spacing: -0.015em;
+}
+
+.animal-location-sub {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  margin-bottom: 22px;
+}
+
+/* Price Box */
+.price-plate {
+  background: var(--bg-sand);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.price-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.price-val {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+}
+
+.price-note {
+  width: 100%;
+  font-size: 12px;
+  color: var(--brand-brown);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* Bepari Box */
+.bepari-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-cream);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 28px;
+}
+
+.bepari-box-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bepari-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--brand-brown);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bepari-name {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.blue-tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: var(--accent-blue-tick);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 9.5px;
+  font-weight: bold;
+}
+
+.bepari-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+.btn-bepari-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-brown);
+  text-decoration: none;
+  border: 1px solid var(--border-light);
+  background: #fff;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  transition: all .2s;
+  white-space: nowrap;
+}
+
+.btn-bepari-link:hover {
+  background: var(--brand-brown);
+  color: #fff;
+}
+
+/* ---------- Slot Picker ---------- */
+.section-step-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-num {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--brand-brown);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.day-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.day-tab-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-cream);
+  color: var(--ink-secondary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.day-tab-btn.active {
+  background: var(--brand-brown);
+  color: #fff;
+  border-color: var(--brand-brown);
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.time-slot-btn {
+  padding: 10px 14px;
+  border: 1px solid var(--border-light);
+  background: #fff;
+  color: var(--ink-primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all .2s;
+}
+
+.time-slot-btn:hover {
+  border-color: var(--brand-brown);
+}
+
+.time-slot-btn.active {
+  background: var(--brand-tan-soft);
+  border-color: var(--brand-brown);
+  color: var(--brand-brown);
+  font-weight: 700;
+}
+
+.time-slot-btn .slot-chk {
+  display: none;
+  font-weight: bold;
+}
+
+.time-slot-btn.active .slot-chk {
+  display: inline;
+}
+
+/* ---------- Buyer Form ---------- */
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.form-input, .form-select {
+  padding: 11px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--ink-primary);
+  background: #fff;
+  transition: border-color .2s;
+}
+
+.form-input:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--brand-brown);
+}
+
+.btn-book-submit {
+  width: 100%;
+  padding: 15px 24px;
+  background: var(--brand-brown);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(78,43,21,0.2);
+  transition: all .2s;
+}
+
+.btn-book-submit:hover {
+  background: var(--brand-brown-dark);
+  transform: translateY(-1px);
+}
+
+.book-guarantee {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+
+/* ---------- Confirmation Card (Hidden Initially) ---------- */
+.confirmed-chamber {
+  display: none;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.confirmed-chamber.active {
+  display: block;
+}
+
+/* Premium Brown Tick Animation */
+.brown-tick-wrap {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+}
+
+.brown-tick-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tick-circle {
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  stroke-width: 5;
+  stroke: var(--brand-brown);
+  fill: var(--brand-tan-soft);
+  animation: drawCircle .6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.tick-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  stroke: var(--brand-brown);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: drawCheck .4s cubic-bezier(0.65, 0, 0.45, 1) .45s forwards;
+}
+
+@keyframes drawCircle {
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes drawCheck {
+  100% { stroke-dashoffset: 0; }
+}
+
+.confirmed-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 6px;
+}
+
+.confirmed-sub {
+  color: var(--ink-muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Ticket Pass */
+.booking-ticket {
+  background: var(--bg-cream);
+  border: 1px dashed var(--brand-tan);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.ticket-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.ticket-id {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand-brown);
+}
+
+.ticket-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(31,170,83,0.12);
+  color: var(--accent-green);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.ticket-label {
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.ticket-val {
+  font-weight: 600;
+  color: var(--ink-primary);
+  text-align: right;
+}
+
+.btn-whatsapp-confirm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #25d366;
+  color: #fff;
+  padding: 13px 20px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.btn-back-catalog {
+  display: inline-block;
+  color: var(--brand-brown);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--brand-brown-dark);
+  color: rgba(255,255,255,0.7);
+  padding: 40px 0;
+  font-size: 13px;
+  border-top: 1px solid rgba(212,180,136,0.15);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+</style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-logo">mandi<span class="tld">.pk</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#animals" class="nav-link">Browse Animals</a>
+      <a href="beparis.html" class="nav-link">Verified Beparis</a>
+      <a href="index.html#how" class="nav-link">How It Works</a>
+      <a href="index.html#animals" class="nav-cta">Live Catalog &rarr;</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb-bar" aria-label="Breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-list">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <a href="index.html#animals">Live Catalog</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <span class="breadcrumb-current" id="crumb-animal-title">Loading animal...</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Details Layout -->
+<main class="detail-layout">
+  <div class="container">
+    <div class="detail-grid">
+
+      <!-- Left Column: Visual Chamber & Physical Specs -->
+      <section class="detail-visual-card">
+        <div class="detail-photo-chamber">
+          <img id="detail-img" src="assets/breed-sahiwal.jpg" alt="Animal Photo">
+          <div class="photo-tag-badge">
+            <span style="color:var(--accent-gold);">&#9670;</span>
+            <span id="detail-tag-number">TAG #01</span>
+          </div>
+          <div class="photo-verified-badge">&#10003; Mandi Checked</div>
+        </div>
+
+        <div class="detail-specs-container">
+          <div class="specs-title">Physical Inspection &amp; Pedigree</div>
+          
+          <div class="spec-matrix-grid">
+            <div class="spec-matrix-cell">
+              <span class="spec-k">Live Weight</span>
+              <span class="spec-v" id="detail-spec-weight">445 kg</span>
+            </div>
+            <div class="spec-matrix-cell">
+              <span class="spec-k">Age</span>
+              <span class="spec-v" id="detail-spec-age">30 mo</span>
+            </div>
+            <div class="spec-matrix-cell">
+              <span class="spec-k">Teeth</span>
+              <span class="spec-v" id="detail-spec-teeth">2-Daant</span>
+            </div>
+            <div class="spec-matrix-cell">
+              <span class="spec-k">Gender</span>
+              <span class="spec-v" id="detail-spec-gender">Bull (Male)</span>
+            </div>
+          </div>
+
+          <div class="assurance-list">
+            <div class="assurance-item">
+              <span class="assurance-icon">&#10003;</span>
+              <span><strong>Daylight Photography:</strong> Untouched natural light photos taken inside mandi premises.</span>
+            </div>
+            <div class="assurance-item">
+              <span class="assurance-icon">&#10003;</span>
+              <span><strong>Physical Mandi Gate Check:</strong> Verified presence at stall shed before listing.</span>
+            </div>
+            <div class="assurance-item">
+              <span class="assurance-icon">&#10003;</span>
+              <span><strong>Zero Advance Required:</strong> Inspect the animal first. Pay the bepari in person.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Booking Box & Details -->
+      <section class="detail-info-card">
+        
+        <!-- Normal Booking View -->
+        <div id="booking-stage">
+          <div class="lot-row">
+            <span class="lot-badge" id="detail-lot-code">LOT #PK-01</span>
+            <span class="avail-pill"><span class="avail-dot"></span> Available for Viewing</span>
+          </div>
+
+          <h1 class="animal-title" id="detail-title">Sahiwal Purebred Bull</h1>
+          <div class="animal-location-sub" id="detail-location">Super Highway Mandi &bull; VIP Shed #14</div>
+
+          <!-- Price Plate -->
+          <div class="price-plate">
+            <div>
+              <div class="price-sub">Agreed Mandi Price</div>
+              <div class="price-val" id="detail-price">PKR 285,000</div>
+            </div>
+            <div class="price-note">&#10003; 0% buyer surcharge &bull; Pay seller directly at the mandi</div>
+          </div>
+
+          <!-- Bepari Mini Card -->
+          <div class="bepari-box">
+            <div class="bepari-box-left">
+              <div class="bepari-avatar" id="detail-bepari-avatar">HA</div>
+              <div>
+                <div class="bepari-name">
+                  <span id="detail-bepari-name">Haji Abdul Razzaq</span>
+                  <span class="blue-tick" id="detail-bepari-tick" title="Verified Seller">&#10003;</span>
+                </div>
+                <div class="bepari-meta" id="detail-bepari-stats">142 animals sold &bull; 4.9 ★ rating</div>
+              </div>
+            </div>
+            <a href="bepari.html" id="detail-bepari-link" class="btn-bepari-link">View Stock &rarr;</a>
+          </div>
+
+          <!-- Slot Selection -->
+          <form id="booking-form" onsubmit="return false;">
+            <div class="section-step-label">
+              <span class="step-num">1</span>
+              <span>Select 30-Minute Viewing Slot</span>
+            </div>
+
+            <div class="day-tabs">
+              <button type="button" class="day-tab-btn active" data-day="Today">Today (Sun)</button>
+              <button type="button" class="day-tab-btn" data-day="Tomorrow">Tomorrow (Mon)</button>
+              <button type="button" class="day-tab-btn" data-day="Tuesday">Tuesday</button>
+            </div>
+
+            <div class="time-grid">
+              <button type="button" class="time-slot-btn active" data-time="5:00 PM – 5:30 PM">
+                <span>5:00 PM – 5:30 PM</span>
+                <span class="slot-chk">&#10003;</span>
+              </button>
+              <button type="button" class="time-slot-btn" data-time="5:30 PM – 6:00 PM">
+                <span>5:30 PM – 6:00 PM</span>
+                <span class="slot-chk">&#10003;</span>
+              </button>
+              <button type="button" class="time-slot-btn" data-time="7:00 AM – 7:30 AM">
+                <span>7:00 AM – 7:30 AM</span>
+                <span class="slot-chk">&#10003;</span>
+              </button>
+              <button type="button" class="time-slot-btn" data-time="7:30 AM – 8:00 AM">
+                <span>7:30 AM – 8:00 AM</span>
+                <span class="slot-chk">&#10003;</span>
+              </button>
+            </div>
+
+            <div class="section-step-label">
+              <span class="step-num">2</span>
+              <span>Your Inspection Details</span>
+            </div>
+
+            <div class="form-field-group">
+              <div class="form-field">
+                <label class="form-label" for="buyer-name">Full Name</label>
+                <input class="form-input" id="buyer-name" type="text" placeholder="e.g. Daniyal Khan" required autocomplete="name">
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="buyer-phone">WhatsApp / Mobile Number</label>
+                <input class="form-input" id="buyer-phone" type="tel" placeholder="0300-1234567" required autocomplete="tel">
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="buyer-area">Your Area in Karachi</label>
+                <select class="form-select" id="buyer-area">
+                  <option value="Gulshan-e-Iqbal">Gulshan-e-Iqbal</option>
+                  <option value="DHA / Clifton">DHA / Clifton</option>
+                  <option value="North Nazimabad">North Nazimabad</option>
+                  <option value="PECHS / Bahadurabad">PECHS / Bahadurabad</option>
+                  <option value="Malir / Cantt">Malir / Cantt</option>
+                  <option value="Federal B Area">Federal B Area</option>
+                  <option value="Gulistan-e-Jauhar">Gulistan-e-Jauhar</option>
+                  <option value="Other Karachi Area">Other Karachi Area</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-book-submit" id="btn-submit-booking">
+              <span>Book 30-Minute Viewing Slot</span>
+              <span>&rarr;</span>
+            </button>
+            <div class="book-guarantee">&#128274; Free reservation &bull; No card or advance payment required</div>
+          </form>
+        </div>
+
+        <!-- Confirmed View (Shows when booked) -->
+        <div id="confirmed-stage" class="confirmed-chamber">
+          <div class="brown-tick-wrap">
+            <svg class="brown-tick-svg" viewBox="0 0 100 100">
+              <circle class="tick-circle" cx="50" cy="50" r="45"></circle>
+              <path class="tick-check" fill="none" d="M30 52 L44 66 L72 36"></path>
+            </svg>
+          </div>
+
+          <h2 class="confirmed-title">Viewing Slot Reserved!</h2>
+          <p class="confirmed-sub">Your private viewing appointment is confirmed. Present your booking pass at the mandi shed.</p>
+
+          <div class="booking-ticket">
+            <div class="ticket-header">
+              <span class="ticket-id" id="ticket-code">MPK-8921</span>
+              <span class="ticket-badge">&#10003; Slot Held</span>
+            </div>
+            <div class="ticket-row">
+              <span class="ticket-label">Animal:</span>
+              <span class="ticket-val" id="ticket-animal">Sahiwal Purebred Bull</span>
+            </div>
+            <div class="ticket-row">
+              <span class="ticket-label">Mandi Stall:</span>
+              <span class="ticket-val" id="ticket-stall">Super Highway Mandi &bull; Shed #14</span>
+            </div>
+            <div class="ticket-row">
+              <span class="ticket-label">Bepari (Seller):</span>
+              <span class="ticket-val" id="ticket-bepari">Haji Abdul Razzaq</span>
+            </div>
+            <div class="ticket-row">
+              <span class="ticket-label">Viewing Window:</span>
+              <span class="ticket-val" id="ticket-time" style="color:var(--brand-brown); font-weight:700;">Today &bull; 5:00 PM – 5:30 PM</span>
+            </div>
+            <div class="ticket-row">
+              <span class="ticket-label">Reserved For:</span>
+              <span class="ticket-val" id="ticket-buyer">Daniyal Khan</span>
+            </div>
+          </div>
+
+          <a href="#" id="ticket-whatsapp-btn" class="btn-whatsapp-confirm" target="_blank" rel="noopener">
+            <span>&#128172; Open WhatsApp with Bepari</span>
+          </a>
+
+          <div>
+            <a href="index.html#animals" class="btn-back-catalog">&larr; Done &bull; Browse More Animals</a>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>&copy; 2026 mandi.pk — Karachi's Livestock Marketplace. All rights reserved.</div>
+    <div>See the animal in person. Meet the bepari.</div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/mock-data.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/api.js"></script>
+<script>
+'use strict';
+
+const AnimalDetailPage = {
+  animal: null,
+  bepari: null,
+  selectedDay: 'Today (Sun)',
+  selectedTime: '5:00 PM – 5:30 PM',
+
+  breedImages: {
+    'Brahman': 'assets/breed-brahman.jpg',
+    'Cholistani': 'assets/breed-cholistani.jpg',
+    'Sahiwal': 'assets/breed-sahiwal.jpg',
+    'Kankrej': 'assets/breed-kankrej.jpg',
+    'Tharparkar': 'assets/breed-tharparkar.jpg',
+    'Dajjal': 'assets/breed-dajjal.jpg'
+  },
+
+  async init() {
+    const params = new URLSearchParams(window.location.search);
+    const animalId = params.get('id') || 'an-1';
+    
+    await this.loadAnimal(animalId);
+    this.bindEvents();
+
+    if (params.get('booked') === '1') {
+      this.showConfirmation('Daniyal Khan', '0300-1234567', 'Gulshan-e-Iqbal');
+    }
+  },
+
+  async loadAnimal(id) {
+    this.animal = await MPK.api.getAnimalById(id);
+    if (!this.animal) {
+      this.animal = MPK_MOCK.animals[0];
+    }
+    this.bepari = this.animal.bepari || await MPK.api.getBepariById(this.animal.bepari_id);
+
+    this.render();
+  },
+
+  getAnimalPhoto(animal) {
+    if (animal.is_calf) return 'assets/breed-calf.jpg';
+    return this.breedImages[animal.breed] || 'assets/breed-sahiwal.jpg';
+  },
+
+  fmtPKR(amount) {
+    return 'PKR ' + Number(amount).toLocaleString('en-PK');
+  },
+
+  getTeeth(months) {
+    if (months < 12) return 'Khiri (Milk)';
+    if (months < 26) return 'Kacha (Developing)';
+    if (months < 36) return '2-Daant (Do Danta)';
+    return '4-Daant (Char Danta)';
+  },
+
+  initials(name) {
+    return name.replace(/^(Haji|Seth|Bhai|Karim|Dost|Gul|Eisa)\s+/i, '').split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase();
+  },
+
+  render() {
+    const a = this.animal;
+    const b = this.bepari;
+    const teeth = this.getTeeth(a.age_months);
+    const tagNum = a.id.replace('an-', '');
+    const title = `${a.breed} ${a.gender === 'male' ? 'Bull' : 'Cow'}`;
+    const mandiLocation = `${b.area} • Shed #${10 + Number(tagNum)}`;
+
+    document.title = `${title} (PKR ${Number(a.listed_price).toLocaleString('en-PK')}) — mandi.pk`;
+    document.getElementById('crumb-animal-title').textContent = title;
+
+    // Left card
+    document.getElementById('detail-img').src = this.getAnimalPhoto(a);
+    document.getElementById('detail-tag-number').textContent = `TAG #${tagNum} • ${teeth}`;
+    document.getElementById('detail-spec-weight').textContent = `${a.weight_kg} kg`;
+    document.getElementById('detail-spec-age').textContent = `${a.age_months} mo`;
+    document.getElementById('detail-spec-teeth').textContent = teeth;
+    document.getElementById('detail-spec-gender').textContent = a.gender === 'male' ? 'Bull (Male)' : 'Cow (Female)';
+
+    // Right card
+    document.getElementById('detail-lot-code').textContent = `LOT #PK-${tagNum.padStart(2, '0')}`;
+    document.getElementById('detail-title').textContent = title;
+    document.getElementById('detail-location').textContent = mandiLocation;
+    document.getElementById('detail-price').textContent = this.fmtPKR(a.listed_price);
+
+    // Bepari Box
+    document.getElementById('detail-bepari-avatar').textContent = this.initials(b.name);
+    document.getElementById('detail-bepari-name').textContent = b.name;
+    document.getElementById('detail-bepari-tick').style.display = b.verified ? 'inline-flex' : 'none';
+    document.getElementById('detail-bepari-stats').textContent = `${b.animals_sold} animals sold • ${b.rating_avg.toFixed(1)} ★ rating`;
+    document.getElementById('detail-bepari-link').href = `bepari.html?id=${b.id}`;
+  },
+
+  bindEvents() {
+    // Day tab selector
+    document.querySelectorAll('.day-tab-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.day-tab-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        this.selectedDay = btn.dataset.day;
+      });
+    });
+
+    // Time slot selector
+    document.querySelectorAll('.time-slot-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.time-slot-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        this.selectedTime = btn.dataset.time;
+      });
+    });
+
+    // Form submission
+    const form = document.getElementById('booking-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('buyer-name').value.trim();
+      const phone = document.getElementById('buyer-phone').value.trim();
+      const area = document.getElementById('buyer-area').value;
+
+      if (!name || !phone) return;
+      this.showConfirmation(name, phone, area);
+    });
+  },
+
+  showConfirmation(name, phone, area) {
+    const a = this.animal;
+    const b = this.bepari;
+    const title = `${a.breed} ${a.gender === 'male' ? 'Bull' : 'Cow'}`;
+    const code = 'MPK-' + Math.floor(1000 + Math.random() * 9000);
+    const windowStr = `${this.selectedDay} • ${this.selectedTime}`;
+
+    document.getElementById('booking-stage').style.display = 'none';
+    const confStage = document.getElementById('confirmed-stage');
+    confStage.classList.add('active');
+
+    document.getElementById('ticket-code').textContent = code;
+    document.getElementById('ticket-animal').textContent = title;
+    document.getElementById('ticket-stall').textContent = `${b.area} • Shed #${10 + Number(a.id.replace('an-', ''))}`;
+    document.getElementById('ticket-bepari').textContent = b.name;
+    document.getElementById('ticket-time').textContent = windowStr;
+    document.getElementById('ticket-buyer').textContent = `${name} (${phone}, ${area})`;
+
+    const msg = `Salam ${b.name}, I reserved viewing slot ${code} on mandi.pk for your ${title} (Price: ${this.fmtPKR(a.listed_price)}). Time: ${windowStr}. My name: ${name}, Phone: ${phone}. See you at ${b.area}!`;
+    document.getElementById('ticket-whatsapp-btn').href = `https://wa.me/92${b.phone.replace(/[^0-9]/g, '').slice(-10)}?text=${encodeURIComponent(msg)}`;
+
+    window.scrollTo({ top: 120, behavior: 'smooth' });
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => AnimalDetailPage.init());
+</script>
+</body>
+</html>
